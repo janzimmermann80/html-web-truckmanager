@@ -50,9 +50,11 @@
   // --- Cookie lišta + Clarity ---
   function initCookieBanner() {
     var banner = document.querySelector(".cookie-banner");
-    if (!banner) { return; }
+    if (!banner) { console.log("[cookie] banner nenalezen"); return; }
 
     var consent = localStorage.getItem("tm-cookie-consent");
+    console.log("[cookie] consent:", consent);
+    
     if (consent === "accepted") {
       loadClarity();
       return;
@@ -62,6 +64,7 @@
     }
 
     banner.classList.add("show");
+    console.log("[cookie] lišta zobrazena");
 
     document.querySelectorAll("[data-cookie-accept]").forEach(function (btn) {
       btn.addEventListener("click", function () {
@@ -101,5 +104,95 @@
       form.parentNode.insertBefore(success, form);
       form.style.display = "none";
     }
+  }
+
+  // --- Přepínání sekcí na stránce Funkce ---
+  function initFeaturesMenu() {
+    var menu = document.getElementById("featuresMenu");
+    if (!menu) { return; }
+
+    var items = menu.querySelectorAll(".features-menu__item");
+    var sections = document.querySelectorAll(".feature-section");
+
+    items.forEach(function (item) {
+      item.addEventListener("click", function (e) {
+        e.preventDefault();
+        var target = item.getAttribute("data-feature");
+
+        // Aktivovat položku v menu
+        items.forEach(function (i) { i.classList.remove("active"); });
+        item.classList.add("active");
+
+        // Zobrazit příslušnou sekci
+        sections.forEach(function (section) {
+          section.classList.remove("active");
+          if (section.id === target) {
+            section.classList.add("active");
+          }
+        });
+
+        // Scroll na začátek obsahu (ne celé stránky)
+        var content = document.querySelector(".features-content");
+        if (content) {
+          var rect = content.getBoundingClientRect();
+          if (rect.top < 0 || rect.top > window.innerHeight / 2) {
+            content.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        }
+      });
+    });
+  }
+
+  initFeaturesMenu();
+
+  // --- Cookie lišta + Clarity ---
+  function initCookieBanner() {
+    var banner = document.querySelector(".cookie-banner");
+    if (!banner) { console.log("[cookie] banner nenalezen"); return; }
+
+    var consent = localStorage.getItem("tm-cookie-consent");
+    console.log("[cookie] consent:", consent);
+    
+    if (consent === "accepted") {
+      loadClarity();
+      return;
+    }
+    if (consent === "declined") {
+      return;
+    }
+
+    banner.classList.add("show");
+    console.log("[cookie] lišta zobrazena");
+
+    document.querySelectorAll("[data-cookie-accept]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        localStorage.setItem("tm-cookie-consent", "accepted");
+        banner.classList.remove("show");
+        loadClarity();
+      });
+    });
+
+    document.querySelectorAll("[data-cookie-decline]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        localStorage.setItem("tm-cookie-consent", "declined");
+        banner.classList.remove("show");
+      });
+    });
+  }
+
+  function loadClarity() {
+    if (window.clarity) { return; }
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "y39oeksfct");
+  }
+
+  // Spustit po načtení DOM
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initCookieBanner);
+  } else {
+    initCookieBanner();
   }
 })();

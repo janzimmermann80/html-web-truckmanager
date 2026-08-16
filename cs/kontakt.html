@@ -6,13 +6,15 @@
   <title>Kontakt — TruckManager</title>
   <meta name="description" content="Kontaktujte nás — 1. Česká obchodní, s.r.o., vývojář dopravního softwaru TruckManager.">
   <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon/TM_logo32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicon/TM_logo180x180.png">
 </head>
 <body>
 
   <header class="site-header">
     <div class="container site-header__inner">
       <a class="site-logo" href="index.html">
-        <span class="logo-tm">Truck</span>Manager
+        <img src="../assets/img/tm_logo_white.svg" alt="TruckManager" class="logo-img">
       </a>
 
       <nav class="main-nav" id="mainNav">
@@ -33,7 +35,6 @@
             <li><a href="../en/kontakt.html">English</a></li>
           </ul>
         </div>
-        <button class="theme-toggle" type="button" aria-label="Tmavý režim">🌙</button>
         <a class="btn btn--primary btn--sm" href="vyzkouset-zdarma.html">Vyzkoušet zdarma</a>
         <button class="nav-toggle" type="button" aria-label="Menu">☰</button>
       </div>
@@ -52,12 +53,12 @@
         <div class="grid grid--2" style="align-items: start;">
           <div class="card">
             <h3>Napište nám</h3>
-            <form class="form form--2col" action="https://formsubmit.co/info@truckmanager.eu" method="POST">
-              <input type="hidden" name="_subject" value="Kontaktní formulář — TruckManager">
-              <input type="hidden" name="_captcha" value="false">
-              <input type="hidden" name="_template" value="table">
-              <input type="hidden" name="_next" value="https://www.truckmanager.cz/cs/kontakt.html?odeslano=1">
-              <input type="text" name="_honey" style="display:none">
+            <form class="form form--2col" action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="19009bc3-2c93-46f5-9833-60c37d14d286">
+              <input type="hidden" name="subject" value="Kontaktní formulář — TruckManager">
+              <input type="hidden" name="from_name" value="Web TruckManager">
+              <input type="hidden" name="redirect" value="https://www.truckmanager.cz/cs/kontakt.html?odeslano=1">
+              <input type="checkbox" name="botcheck" style="display:none">
               <div>
                 <label for="jmeno">Jméno a příjmení *</label>
                 <input type="text" id="jmeno" name="jmeno" required>

@@ -6,13 +6,15 @@
   <title>Ceník — TruckManager</title>
   <meta name="description" content="Ceník dopravního softwaru TruckManager. Transparentní ceny, 30 dní zkušební verze zdarma.">
   <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon/TM_logo32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicon/TM_logo180x180.png">
 </head>
 <body>
 
   <header class="site-header">
     <div class="container site-header__inner">
       <a class="site-logo" href="index.html">
-        <span class="logo-tm">Truck</span>Manager
+        <img src="../assets/img/tm_logo_white.svg" alt="TruckManager" class="logo-img">
       </a>
 
       <nav class="main-nav" id="mainNav">
@@ -33,7 +35,6 @@
             <li><a href="../en/cenik.html">English</a></li>
           </ul>
         </div>
-        <button class="theme-toggle" type="button" aria-label="Tmavý režim">🌙</button>
         <a class="btn btn--primary btn--sm" href="vyzkouset-zdarma.html">Vyzkoušet zdarma</a>
         <button class="nav-toggle" type="button" aria-label="Menu">☰</button>
       </div>
@@ -49,53 +50,98 @@
           <p>Férové ceny bez skrytých poplatků. Všechny varianty si můžete na 30 dní zdarma vyzkoušet.</p>
         </div>
 
-        <div class="grid grid--3">
+        <div class="grid grid--5">
+          <!-- FREE -->
           <div class="card pricing-card">
-            <h3>Start</h3>
-            <div class="price">[cena] <small>/ vozidlo / měsíc</small></div>
-            <p class="mb-0">Pro malé dopravce, kteří chtějí začít s digitalizací.</p>
+            <span class="pricing-card__badge pricing-card__badge--free">Free</span>
+            <h3>FREE</h3>
+            <div class="price">0 Kč <small>/ měsíc</small></div>
+            <p class="mb-0">Základní funkce pro malé dopravce a živnostníky.</p>
             <ul>
               <li>Evidence zakázek</li>
               <li>Diář nakládek a vykládek</li>
-              <li>Základní výkazy</li>
+              <li>Aplikace pro řidiče (základ)</li>
               <li>E-mailová podpora</li>
+            </ul>
+            <a class="btn btn--outline" href="vyzkouset-zdarma.html">Začít zdarma</a>
+          </div>
+
+          <!-- LITE -->
+          <div class="card pricing-card">
+            <span class="pricing-card__badge pricing-card__badge--lite">Lite</span>
+            <h3>LITE</h3>
+            <div class="price">[cena] <small>/ vozidlo / měsíc</small></div>
+            <p class="mb-0">Pro dopravce, kteří chtějí více automatizace.</p>
+            <ul>
+              <li>Vše z FREE</li>
+              <li>Dispečerská plachta</li>
+              <li>Servis a údržba vozidel</li>
+              <li>Paletové hospodářství</li>
+              <li>Cestovní náhrady</li>
             </ul>
             <a class="btn btn--outline" href="vyzkouset-zdarma.html">Vyzkoušet zdarma</a>
           </div>
 
+          <!-- FULL -->
           <div class="card pricing-card pricing-card--featured">
             <span class="badge-featured">Nejoblíbenější</span>
-            <h3>Profesional</h3>
+            <span class="pricing-card__badge pricing-card__badge--full">Full</span>
+            <h3>FULL</h3>
             <div class="price">[cena] <small>/ vozidlo / měsíc</small></div>
             <p class="mb-0">Kompletní řízení přepravy pro profesionální dopravce.</p>
             <ul>
-              <li>Vše z varianty Start</li>
-              <li>Dispečerská plachta s GPS</li>
+              <li>Vše z LITE</li>
               <li>Automatická fakturace z GPS</li>
-              <li>Skenování dokumentů ve vozidle</li>
-              <li>Aplikace pro řidiče</li>
-              <li>Telefonická podpora</li>
+              <li>Hospodářské výsledky a statistiky</li>
+              <li>AI asistence</li>
+              <li>Prioritní podpora</li>
             </ul>
             <a class="btn btn--primary" href="vyzkouset-zdarma.html">Vyzkoušet zdarma</a>
           </div>
 
+          <!-- SPEDICE -->
           <div class="card pricing-card">
-            <h3>Enterprise</h3>
-            <div class="price">Na míru</div>
-            <p class="mb-0">Pro velké flotily a spediční firmy se specifickými požadavky.</p>
+            <span class="pricing-card__badge pricing-card__badge--spedice">Spedice</span>
+            <h3>SPEDICE</h3>
+            <div class="price">[cena] <small>/ vozidlo / měsíc</small></div>
+            <p class="mb-0">Pro spediční firmy a logistické operátory.</p>
             <ul>
-              <li>Vše z varianty Profesional</li>
-              <li>Integrace na míru (účetnictví, databanky, karty)</li>
-              <li>AI asistence a pokročilé statistiky</li>
-              <li>Sběrná přeprava a sklady</li>
-              <li>Prioritní podpora 24/7</li>
+              <li>Vše z FULL</li>
+              <li>Sběrná přeprava (LTL)</li>
+              <li>Sklady a překládky</li>
+              <li>Spediční databanky (Timocom, Trans.eu)</li>
+              <li>Více uživatelů a rolí</li>
             </ul>
-            <a class="btn btn--outline" href="kontakt.html">Kontaktujte nás</a>
+            <a class="btn btn--outline" href="vyzkouset-zdarma.html">Vyzkoušet zdarma</a>
+          </div>
+
+          <!-- PRIVATE CLOUD — celá šířka -->
+          <div class="card pricing-card pricing-card--wide">
+            <div class="pricing-card__wide-inner">
+              <div class="pricing-card__wide-main">
+                <span class="pricing-card__badge pricing-card__badge--cloud">Cloud</span>
+                <h3>PRIVATE CLOUD</h3>
+                <div class="price">Na míru</div>
+                <p class="mb-0">Pro velké flotily a korporáty s vlastní infrastrukturou.</p>
+              </div>
+              <div class="pricing-card__wide-features">
+                <ul>
+                  <li>Vše ze SPEDICE</li>
+                  <li>Vlastní server / privátní cloud</li>
+                  <li>Integrace na míru (ERP, účetnictví)</li>
+                  <li>SLA a podpora 24/7</li>
+                  <li>Školení a onboarding</li>
+                </ul>
+              </div>
+              <div class="pricing-card__wide-action">
+                <a class="btn btn--outline btn--lg" href="kontakt.html">Kontaktujte nás</a>
+              </div>
+            </div>
           </div>
         </div>
 
         <p class="text-center" style="margin-top: 48px; color: var(--color-text-muted);">
-          [Poznámka k cenám — DPH, minimální počet vozidel, délka závazku apod.]
+          Všechny ceny jsou bez DPH. Minimální délka závazku 12 měsíců. Možnost měsíční platby s příplatkem.
         </p>
       </div>
     </section>

@@ -524,8 +524,10 @@ h3 { font-size: 1.25rem; }
   position: relative;
   display: block;
   text-align: center;
-  height: 1.2em;
+  min-height: 1.2em;
   overflow: hidden;
+  max-width: 900px;
+  margin: 0 auto;
 }
 .hero__rotating span {
   position: absolute;
@@ -536,13 +538,57 @@ h3 { font-size: 1.25rem; }
   color: var(--color-primary);
   transition: opacity 0.5s ease, transform 0.5s ease;
   transform: translateY(8px);
-  white-space: nowrap;
-  font-size: clamp(1.8rem, 3.8vw, 2.8rem);
+  white-space: normal;
+  font-size: clamp(1.4rem, 3.2vw, 2.4rem);
+  line-height: 1.3;
+  word-wrap: break-word;
 }
 .hero__rotating span.active {
   position: relative;
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ---------- Sticky box v pravÃ©m dolnÃ­m rohu ---------- */
+.hero-badge-sticky {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+  background: #fff;
+  border: 2px solid var(--color-primary);
+  padding: 20px 24px;
+  border-radius: var(--radius);
+  box-shadow: 0 12px 40px rgba(242, 138, 73, 0.25), 0 2px 8px rgba(0,0,0,0.08);
+  max-width: 280px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.hero-badge-sticky .badge-label {
+  display: inline-block;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.hero-badge-sticky p { margin: 0 0 10px; color: var(--color-text); }
+.hero-badge-sticky p:last-child { margin-bottom: 0; }
+.hero-badge-sticky .badge-sub {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  border-top: 1px solid var(--color-border);
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
+/* Responzivita */
+@media (max-width: 680px) {
+  .hero-badge-sticky { display: none; }
 }
 
 /* ---------- BÄ›Å¾Ã­cÃ­ pÃ¡s s logy (marquee) ---------- */
@@ -762,3 +808,69 @@ h3 { font-size: 1.25rem; }
   .cookie-banner__actions { justify-content: center; }
   .cookie-banner__btn { flex: 1 1 auto; }
 }
+
+
+
+
+
+/* ---------- Stránka Funkce — levé menu + obsah ---------- */
+.features-layout { display: grid; grid-template-columns: 260px 1fr; gap: 48px; align-items: start; }
+.features-menu { position: sticky; top: 100px; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 8px 0; box-shadow: var(--shadow-sm); }
+.features-menu__item { display: flex; align-items: center; gap: 12px; padding: 14px 20px; color: var(--color-text); text-decoration: none; font-weight: 500; font-size: 0.95rem; border-left: 3px solid transparent; transition: all 0.15s ease; cursor: pointer; }
+.features-menu__item:hover { background: var(--color-bg-alt); color: var(--color-primary); }
+.features-menu__item.active { background: rgba(242, 138, 73, 0.08); color: var(--color-primary); border-left-color: var(--color-primary); font-weight: 600; }
+.features-menu__item svg { width: 22px; height: 22px; flex-shrink: 0; }
+.features-menu__badge { margin-left: auto; font-size: 0.65rem; font-weight: 700; padding: 2px 6px; border-radius: 4px; background: var(--color-bg-alt); color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+.features-menu__item.free .features-menu__badge { background: rgba(76, 175, 80, 0.12); color: #2e7d32; }
+.features-menu__item.full .features-menu__badge { background: rgba(242, 138, 73, 0.12); color: var(--color-primary-dark); }
+.features-content { min-width: 0; }
+.feature-section { display: none; padding: 32px 0; }
+.feature-section.active { display: block; }
+.feature-section__header { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; padding-bottom: 20px; border-bottom: 2px solid var(--color-border); }
+.feature-section__header svg { width: 48px; height: 48px; color: var(--color-primary); flex-shrink: 0; }
+.feature-section__header h2 { margin: 0; font-size: 1.75rem; }
+.feature-section__content { color: var(--color-text-muted); line-height: 1.7; }
+.feature-section__content p { margin: 0 0 16px; font-size: 1.05rem; }
+.feature-section__content ul { margin: 16px 0; padding-left: 24px; }
+.feature-section__content li { margin-bottom: 8px; }
+.feature-section__image { margin-top: 28px; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--color-border); box-shadow: var(--shadow-md); }
+.feature-section__image img { width: 100%; height: auto; display: block; }
+.feature-section__image .placeholder { aspect-ratio: 16 / 9; background: linear-gradient(135deg, var(--color-bg-alt), var(--color-surface)); display: flex; align-items: center; justify-content: center; color: var(--color-text-muted); font-size: 0.95rem; }
+@media (max-width: 960px) { .features-layout { grid-template-columns: 1fr; gap: 24px; } .features-menu { position: static; display: flex; flex-wrap: wrap; gap: 4px; padding: 12px; } .features-menu__item { border-left: none; border-radius: var(--radius-sm); padding: 10px 16px; } .features-menu__item.active { background: var(--color-primary); color: #fff; } .features-menu__item svg { width: 18px; height: 18px; } }
+
+
+/* Video v feature sekcích */
+.feature-section__video { margin-top: 28px; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--color-border); box-shadow: var(--shadow-md); }
+.feature-section__video video { width: 100%; height: auto; display: block; }
+
+
+/* ---------- Ceník — 5 tarifù ---------- */
+.grid--5 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.pricing-card { position: relative; text-align: center; padding: 28px 20px; }`n.pricing-card--wide { grid-column: 1 / -1; }`n.pricing-card__wide-inner { display: flex; align-items: center; gap: 48px; text-align: left; }`n.pricing-card__wide-main { flex: 0 0 280px; }`n.pricing-card__wide-features { flex: 1; }`n.pricing-card__wide-features ul { margin: 0; }`n.pricing-card__wide-action { flex: 0 0 auto; }`n@media (max-width: 960px) { .pricing-card__wide-inner { flex-direction: column; gap: 24px; text-align: center; } .pricing-card__wide-main { flex: none; } }
+.pricing-card__badge { display: inline-block; font-size: 0.7rem; font-weight: 700; padding: 4px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
+.pricing-card__badge--free { background: rgba(76, 175, 80, 0.12); color: #2e7d32; }
+.pricing-card__badge--lite { background: rgba(13, 95, 215, 0.12); color: #0d5fd7; }
+.pricing-card__badge--full { background: rgba(242, 138, 73, 0.12); color: var(--color-primary-dark); }
+.pricing-card__badge--spedice { background: rgba(156, 39, 176, 0.12); color: #7b1fa2; }
+.pricing-card__badge--cloud { background: rgba(96, 125, 139, 0.12); color: #455a64; }
+.pricing-card h3 { margin: 8px 0 4px; font-size: 1.3rem; }
+.pricing-card .price { font-size: 1.8rem; font-weight: 700; color: var(--color-text); margin: 16px 0; }
+.pricing-card .price small { font-size: 0.9rem; font-weight: 400; color: var(--color-text-muted); }
+.pricing-card ul { text-align: left; margin: 20px 0; padding-left: 20px; }
+.pricing-card ul li { margin-bottom: 8px; font-size: 0.92rem; color: var(--color-text-muted); }
+.pricing-card .btn { margin-top: auto; }
+.pricing-card--featured { border-color: var(--color-primary); box-shadow: 0 8px 32px rgba(242, 138, 73, 0.15); }
+.pricing-card--featured .badge-featured { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--color-primary); color: #fff; font-size: 0.75rem; font-weight: 600; padding: 4px 16px; border-radius: 20px; }
+@media (max-width: 1100px) { .grid--5 { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 760px) { .grid--5 { grid-template-columns: 1fr; } }
+
+
+
+/* Private Cloud — celá šíøka */
+.pricing-card--wide { grid-column: 1 / -1; margin-top: 24px; }
+.pricing-card__wide-inner { display: flex; align-items: center; gap: 48px; text-align: left; }
+.pricing-card__wide-main { flex: 0 0 280px; }
+.pricing-card__wide-features { flex: 1; }
+.pricing-card__wide-features ul { margin: 0; }
+.pricing-card__wide-action { flex: 0 0 auto; }
+@media (max-width: 960px) { .pricing-card__wide-inner { flex-direction: column; gap: 24px; text-align: center; } .pricing-card__wide-main { flex: none; } }
