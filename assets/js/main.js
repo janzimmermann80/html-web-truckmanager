@@ -37,6 +37,19 @@
     if (!container) { return; }
     var items = container.querySelectorAll("span");
     if (items.length < 2) { return; }
+
+    // Pevná výška = nejvyšší fráze, aby obsah pod textem neposkakoval
+    function lockHeight() {
+      var max = 0;
+      items.forEach(function (item) {
+        if (item.offsetHeight > max) { max = item.offsetHeight; }
+      });
+      if (max > 0) { container.style.minHeight = max + "px"; }
+    }
+    lockHeight();
+    window.addEventListener("load", lockHeight);
+    window.addEventListener("resize", lockHeight);
+
     var current = 0;
     setInterval(function () {
       items[current].classList.remove("active");
@@ -113,34 +126,38 @@
 
     var items = menu.querySelectorAll(".features-menu__item");
     var sections = document.querySelectorAll(".feature-section");
+    var select = document.getElementById("featuresSelect");
+
+    function activateFeature(target) {
+      // Aktivovat položku v menu
+      items.forEach(function (i) {
+        i.classList.toggle("active", i.getAttribute("data-feature") === target);
+      });
+      // Synchronizovat select
+      if (select && select.value !== target) { select.value = target; }
+      // Zobrazit příslušnou sekci
+      sections.forEach(function (section) {
+        section.classList.toggle("active", section.id === target);
+      });
+      // Scroll na nadpis funkce (ne na text pod ním)
+      var activeSection = document.querySelector(".feature-section.active");
+      if (activeSection) {
+        activeSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
 
     items.forEach(function (item) {
       item.addEventListener("click", function (e) {
         e.preventDefault();
-        var target = item.getAttribute("data-feature");
-
-        // Aktivovat položku v menu
-        items.forEach(function (i) { i.classList.remove("active"); });
-        item.classList.add("active");
-
-        // Zobrazit příslušnou sekci
-        sections.forEach(function (section) {
-          section.classList.remove("active");
-          if (section.id === target) {
-            section.classList.add("active");
-          }
-        });
-
-        // Scroll na začátek obsahu (ne celé stránky)
-        var content = document.querySelector(".features-content");
-        if (content) {
-          var rect = content.getBoundingClientRect();
-          if (rect.top < 0 || rect.top > window.innerHeight / 2) {
-            content.scrollIntoView({ behavior: "smooth", block: "start" });
-          }
-        }
+        activateFeature(item.getAttribute("data-feature"));
       });
     });
+
+    if (select) {
+      select.addEventListener("change", function () {
+        activateFeature(select.value);
+      });
+    }
   }
 
   initFeaturesMenu();

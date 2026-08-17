@@ -35,7 +35,7 @@
             <li><a href="../en/funkce.html">English</a></li>
           </ul>
         </div>
-        <a class="btn btn--primary btn--sm" href="vyzkouset-zdarma.html">Vyzkoušet zdarma</a>
+        <a class="btn btn--primary btn--sm header-cta" href="vyzkouset-zdarma.html">Vyzkoušet zdarma</a>
         <button class="nav-toggle" type="button" aria-label="Menu">☰</button>
       </div>
     </div>
@@ -51,6 +51,25 @@
         </div>
 
         <div class="features-layout">
+          <!-- Mobilní rozbalovací výběr funkce -->
+          <div class="features-select">
+            <select id="featuresSelect" aria-label="Vyberte funkci">
+              <option value="dispecink">Dispečerská plachta (Free)</option>
+              <option value="objednavky">Příjem objednávek (Free)</option>
+              <option value="diar">Diář nakládek (Free)</option>
+              <option value="fakturace">Automatická fakturace (Full)</option>
+              <option value="ridici">Aplikace pro řidiče (Free)</option>
+              <option value="vozidla">Hospodářské výsledky (Full)</option>
+              <option value="vykazy">Výkazy a statistiky (Full)</option>
+              <option value="servis">Servis a údržba (Free)</option>
+              <option value="sberna">Sběrná přeprava (Full)</option>
+              <option value="palety">Paletové hospodářství (Free)</option>
+              <option value="karty">Záloha karet řidičů (Free)</option>
+              <option value="diety">Cestovní náhrady (Free)</option>
+              <option value="ai">AI asistence (Full)</option>
+            </select>
+          </div>
+
           <!-- Levé menu — tmavé jako v aplikaci -->
           <nav class="features-menu" id="featuresMenu">
             <a href="#dispecink" class="features-menu__item active free" data-feature="dispecink">

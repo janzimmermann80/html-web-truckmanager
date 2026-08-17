@@ -25,7 +25,7 @@
 
 * { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: clip; }
 
 body {
   margin: 0;
@@ -133,7 +133,8 @@ h3 { font-size: 1.25rem; }
   background: none;
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: var(--radius-sm);
-  padding: 6px 12px;
+  height: 38px;
+  padding: 0 12px;
   font: inherit;
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.85);
@@ -214,8 +215,7 @@ h3 { font-size: 1.25rem; }
 .btn--lg { padding: 16px 36px; font-size: 1.1rem; }
 .btn--sm { padding: 8px 18px; font-size: 0.92rem; }
 
-/* ---------- Hero ---------- */
-.hero {
+/* ---------- Hero ---------- */.hero {
   padding: 96px 0 72px;
   background:
     radial-gradient(1000px 420px at 85% -10%, rgba(242, 138, 73, 0.10), transparent 60%),
@@ -243,6 +243,51 @@ h3 { font-size: 1.25rem; }
   margin: 0 0 32px;
 }
 .hero__cta { display: flex; gap: 14px; flex-wrap: wrap; }
+
+/* P≈ôeblik√°v√°n√≠ styl≈Ø hero CTA tlaƒç√≠tek (cyklus 8 s: 3 s stav + 1 s p≈ôechod) */
+@keyframes heroCtaPrimarySwap {
+  0%, 37.5% {
+    background: var(--color-primary);
+    color: #fff;
+    border-color: transparent;
+  }
+  50%, 87.5% {
+    background: var(--color-surface);
+    color: var(--color-text);
+    border-color: var(--color-border);
+  }
+  100% {
+    background: var(--color-primary);
+    color: #fff;
+    border-color: transparent;
+  }
+}
+@keyframes heroCtaOutlineSwap {
+  0%, 37.5% {
+    background: var(--color-surface);
+    color: var(--color-text);
+    border-color: var(--color-border);
+  }
+  50%, 87.5% {
+    background: var(--color-primary);
+    color: #fff;
+    border-color: transparent;
+  }
+  100% {
+    background: var(--color-surface);
+    color: var(--color-text);
+    border-color: var(--color-border);
+  }
+}
+.hero__cta .btn--primary { animation: heroCtaPrimarySwap 8s ease-in-out infinite; }
+.hero__cta .btn--outline { animation: heroCtaOutlineSwap 8s ease-in-out infinite; }
+.hero__cta .btn--primary:hover,
+.hero__cta .btn--outline:hover { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+  .hero__cta .btn--primary,
+  .hero__cta .btn--outline { animation: none; }
+}
+
 .hero__media img {
   border-radius: var(--radius);
   box-shadow: var(--shadow-lg);
@@ -544,7 +589,6 @@ h3 { font-size: 1.25rem; }
   word-wrap: break-word;
 }
 .hero__rotating span.active {
-  position: relative;
   opacity: 1;
   transform: translateY(0);
 }
@@ -725,7 +769,8 @@ h3 { font-size: 1.25rem; }
   .grid--3, .grid--2, .form--2col { grid-template-columns: 1fr; }
   .stats { grid-template-columns: repeat(2, 1fr); }
 
-  .nav-toggle { display: block; margin-left: auto; }
+  .nav-toggle { display: block; }
+  .header-cta { display: none; }
   .main-nav {
     display: none;
     position: absolute;
@@ -739,11 +784,15 @@ h3 { font-size: 1.25rem; }
   }
   .main-nav.open { display: block; }
   .main-nav ul { flex-direction: column; gap: 0; }
-  .main-nav a { padding: 12px 8px; font-size: 1.05rem; }
-  .header-actions { margin-left: 0; }
+  .main-nav a { padding: 12px 8px; font-size: 1.05rem; color: var(--color-text); }
+  .main-nav a:hover { background: var(--color-bg-alt); color: var(--color-text); }
+  .main-nav a.active { color: var(--color-primary); }
+  .header-actions { margin-left: auto; }
   .site-header__inner { flex-wrap: nowrap; }
   .hero { padding: 56px 0 48px; }
   .steps--horizontal { grid-template-columns: 1fr; }
+  .site-footer__grid { grid-template-columns: 1fr; gap: 28px; }
+  .site-footer .about { max-width: none; }
   .marquee__item { min-width: 80px; height: 36px; }
   .marquee__item img { max-height: 28px; max-width: 90px; }
 }
@@ -805,6 +854,7 @@ h3 { font-size: 1.25rem; }
 
 @media (max-width: 680px) {
   .cookie-banner__inner { flex-direction: column; align-items: stretch; text-align: center; }
+  .cookie-banner__text { flex: 0 1 auto; }
   .cookie-banner__actions { justify-content: center; }
   .cookie-banner__btn { flex: 1 1 auto; }
 }
@@ -813,8 +863,12 @@ h3 { font-size: 1.25rem; }
 
 
 
-/* ---------- Str·nka Funkce ó levÈ menu + obsah ---------- */
+/* ---------- StrÔøΩnka Funkce ÔøΩ levÔøΩ menu + obsah ---------- */
 .features-layout { display: grid; grid-template-columns: 260px 1fr; gap: 48px; align-items: start; }
+
+/* Mobiln√≠ rozbalovac√≠ v√Ωbƒõr funkce ‚Äî skryt√Ω na desktopu */
+.features-select { display: none; }
+
 .features-menu { position: sticky; top: 100px; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 8px 0; box-shadow: var(--shadow-sm); }
 .features-menu__item { display: flex; align-items: center; gap: 12px; padding: 14px 20px; color: var(--color-text); text-decoration: none; font-weight: 500; font-size: 0.95rem; border-left: 3px solid transparent; transition: all 0.15s ease; cursor: pointer; }
 .features-menu__item:hover { background: var(--color-bg-alt); color: var(--color-primary); }
@@ -824,7 +878,7 @@ h3 { font-size: 1.25rem; }
 .features-menu__item.free .features-menu__badge { background: rgba(76, 175, 80, 0.12); color: #2e7d32; }
 .features-menu__item.full .features-menu__badge { background: rgba(242, 138, 73, 0.12); color: var(--color-primary-dark); }
 .features-content { min-width: 0; }
-.feature-section { display: none; padding: 32px 0; }
+.feature-section { display: none; padding: 32px 0; scroll-margin-top: 160px; }
 .feature-section.active { display: block; }
 .feature-section__header { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; padding-bottom: 20px; border-bottom: 2px solid var(--color-border); }
 .feature-section__header svg { width: 48px; height: 48px; color: var(--color-primary); flex-shrink: 0; }
@@ -836,15 +890,53 @@ h3 { font-size: 1.25rem; }
 .feature-section__image { margin-top: 28px; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--color-border); box-shadow: var(--shadow-md); }
 .feature-section__image img { width: 100%; height: auto; display: block; }
 .feature-section__image .placeholder { aspect-ratio: 16 / 9; background: linear-gradient(135deg, var(--color-bg-alt), var(--color-surface)); display: flex; align-items: center; justify-content: center; color: var(--color-text-muted); font-size: 0.95rem; }
-@media (max-width: 960px) { .features-layout { grid-template-columns: 1fr; gap: 24px; } .features-menu { position: static; display: flex; flex-wrap: wrap; gap: 4px; padding: 12px; } .features-menu__item { border-left: none; border-radius: var(--radius-sm); padding: 10px 16px; } .features-menu__item.active { background: var(--color-primary); color: #fff; } .features-menu__item svg { width: 18px; height: 18px; } }
+@media (max-width: 960px) {
+  .features-layout { grid-template-columns: 1fr; gap: 20px; margin-top: 0; padding-top: 0; }
+  .features-menu { display: none; }
+  .features-select {
+    display: block;
+    position: fixed;
+    top: 68px;
+    left: 0;
+    right: 0;
+    z-index: 90;
+    padding: 10px 24px;
+    background: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+  }
+  .features-content { padding-top: 0; }
+  /* Odsazen√≠ obsahu pod fixed select na str√°nce Funkce */
+  main:has(.features-select) .section:first-of-type { padding-top: 100px; }
+  main:has(.features-select) .section__head { margin-bottom: 20px; }
+  .features-select select {
+    width: 100%;
+    padding: 13px 40px 13px 16px;
+    font: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    background: var(--color-surface);
+    border: 2px solid var(--color-primary);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-md);
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    background-image: linear-gradient(45deg, transparent 49%, var(--color-primary) 50%), linear-gradient(-45deg, transparent 49%, var(--color-primary) 50%);
+    background-position: calc(100% - 21px) 50%, calc(100% - 15px) 50%;
+    background-size: 6px 6px;
+    background-repeat: no-repeat;
+  }
+  .features-select select:focus { outline: none; border-color: var(--color-primary-dark); }
+}
 
 
-/* Video v feature sekcÌch */
+/* Video v feature sekcÔøΩch */
 .feature-section__video { margin-top: 28px; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--color-border); box-shadow: var(--shadow-md); }
 .feature-section__video video { width: 100%; height: auto; display: block; }
 
 
-/* ---------- CenÌk ó 5 tarif˘ ---------- */
+/* ---------- CenÔøΩk ÔøΩ 5 tarifÔøΩ ---------- */
 .grid--5 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 .pricing-card { position: relative; text-align: center; padding: 28px 20px; }`n.pricing-card--wide { grid-column: 1 / -1; }`n.pricing-card__wide-inner { display: flex; align-items: center; gap: 48px; text-align: left; }`n.pricing-card__wide-main { flex: 0 0 280px; }`n.pricing-card__wide-features { flex: 1; }`n.pricing-card__wide-features ul { margin: 0; }`n.pricing-card__wide-action { flex: 0 0 auto; }`n@media (max-width: 960px) { .pricing-card__wide-inner { flex-direction: column; gap: 24px; text-align: center; } .pricing-card__wide-main { flex: none; } }
 .pricing-card__badge { display: inline-block; font-size: 0.7rem; font-weight: 700; padding: 4px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
@@ -866,7 +958,7 @@ h3 { font-size: 1.25rem; }
 
 
 
-/* Private Cloud ó cel· öÌ¯ka */
+/* Private Cloud ÔøΩ celÔøΩ ÔøΩÔøΩÔøΩka */
 .pricing-card--wide { grid-column: 1 / -1; margin-top: 24px; }
 .pricing-card__wide-inner { display: flex; align-items: center; gap: 48px; text-align: left; }
 .pricing-card__wide-main { flex: 0 0 280px; }
