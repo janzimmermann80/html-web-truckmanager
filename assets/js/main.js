@@ -60,6 +60,20 @@
 
   initRotatingText();
 
+  // --- Diagram funkcí — flip karet na tap (mobil); desktop řeší :hover v CSS ---
+  function initDiagramCards() {
+    var cards = document.querySelectorAll(".hero-diagram__card, .hero-diagram__hub");
+    if (!cards.length) { return; }
+    cards.forEach(function (card) {
+      card.addEventListener("click", function (e) {
+        if (e.target.closest("a")) { return; }
+        card.classList.toggle("flipped");
+      });
+    });
+  }
+
+  initDiagramCards();
+
   // --- Cookie lišta + Clarity ---
   function initCookieBanner() {
     var banner = document.querySelector(".cookie-banner");
@@ -158,9 +172,37 @@
         activateFeature(select.value);
       });
     }
+
+    var fromHash = window.location.hash.replace("#", "");
+    if (fromHash && document.getElementById(fromHash)) {
+      activateFeature(fromHash);
+    }
   }
 
   initFeaturesMenu();
+
+  // --- Rozbalování skupin ve srovnávací tabulce tarifů ---
+  function initCompareTable() {
+    var groups = document.querySelectorAll(".compare-table .compare-group");
+    if (!groups.length) { return; }
+
+    groups.forEach(function (group, index) {
+      var toggle = group.querySelector(".compare-group__toggle");
+      if (!toggle) { return; }
+
+      if (index === 0) {
+        group.classList.add("open");
+        toggle.setAttribute("aria-expanded", "true");
+      }
+
+      toggle.addEventListener("click", function () {
+        var open = group.classList.toggle("open");
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+    });
+  }
+
+  initCompareTable();
 
   // --- Cookie lišta + Clarity ---
   function initCookieBanner() {

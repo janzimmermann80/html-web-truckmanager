@@ -7,6 +7,7 @@
 :root {
   --color-primary: #f28a49;
   --color-primary-dark: #d9722f;
+  --color-heart: #d6333f;
   --color-accent: #0d5fd7;
   --color-bg: #ffffff;
   --color-bg-alt: #f4f7fb;
@@ -217,7 +218,7 @@ h3 { font-size: 1.25rem; }
 .btn--sm { padding: 8px 18px; font-size: 0.92rem; }
 
 /* ---------- Hero ---------- */.hero {
-  padding: 96px 0 72px;
+  padding: 16px 0 40px;
   background:
     radial-gradient(1000px 420px at 85% -10%, rgba(242, 138, 73, 0.10), transparent 60%),
     radial-gradient(700px 380px at 5% 0%, rgba(242, 138, 73, 0.06), transparent 55%);
@@ -236,7 +237,7 @@ h3 { font-size: 1.25rem; }
   color: var(--color-primary);
   font-weight: 600;
   font-size: 0.85rem;
-  margin-bottom: 20px;
+  margin-bottom: 8px;
 }
 .hero p.lead {
   font-size: 1.2rem;
@@ -244,6 +245,173 @@ h3 { font-size: 1.25rem; }
   margin: 0 0 32px;
 }
 .hero__cta { display: flex; gap: 14px; flex-wrap: wrap; }
+
+/* ---------- Hero vizual — rámečky kolem H1 ---------- */
+.hero__center { position: relative; }
+
+/* ---------- Varianta C: diagram funkcí propojený se středem ---------- */
+.hero-diagram {
+  position: relative;
+  margin: 8px auto 40px;
+  max-width: 1000px;
+  aspect-ratio: 10 / 5.6;
+}
+.hero-diagram__lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.55;
+  z-index: 5;
+  pointer-events: none;
+}
+.hero-diagram__tag {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  transform: translate(-50%, -50%);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text);
+  background: var(--color-bg);
+  padding: 2px 10px;
+  z-index: 6;
+}
+.hero-diagram__hub {
+  position: absolute;
+  left: 50%;
+  top: 57.2%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  z-index: 7;
+}
+.hero-diagram__hub-inner {
+  position: relative;
+  width: 100%;
+  min-height: 150px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+  animation: heroHubBeat 2.6s ease-in-out infinite;
+}
+.hero-diagram__hub:hover .hero-diagram__hub-inner,
+.hero-diagram__hub.flipped .hero-diagram__hub-inner { transform: rotateY(180deg); }
+@keyframes heroHubBeat {
+  0%, 28%, 70%, 100% { scale: 1; }
+  14% { scale: 1.035; }
+  42% { scale: 1.05; }
+  56% { scale: 1.015; }
+}
+.hero-diagram__hub-front,
+.hero-diagram__hub-back {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-align: center;
+  padding: 18px 20px;
+  background: #fff;
+  border: 2px solid var(--color-heart);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 30px rgba(214, 51, 63, 0.22);
+  backface-visibility: hidden;
+}
+.hero-diagram__hub-front strong { font-size: 1.05rem; color: var(--color-text); line-height: 1.25; }
+.hero-diagram__hub-front small { color: var(--color-text-muted); font-size: 0.8rem; }
+.hero-diagram__logo { height: 33px; }
+.hero-diagram__hub-back {
+  transform: rotateY(180deg);
+  background: var(--color-primary);
+  border-color: var(--color-primary-dark);
+  text-decoration: none;
+  cursor: pointer;
+}
+.hero-diagram__hub-back strong { color: #fff; font-size: 1.05rem; }
+.hero-diagram__hub-back span { color: #fff; font-weight: 700; font-size: 0.9rem; text-decoration: underline; }
+
+.hero-diagram__card {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  transform: translate(-50%, -50%);
+  width: var(--w, 17%);
+  z-index: 3;
+  animation: heroCardPulse 7s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.45s);
+}
+@keyframes heroCardPulse {
+  0%, 100% { filter: drop-shadow(0 0 0 rgba(242, 138, 73, 0)); }
+  50% { filter: drop-shadow(0 0 12px rgba(242, 138, 73, 0.55)); }
+}
+.hero-diagram__card-inner {
+  position: relative;
+  width: 100%;
+  min-height: 64px;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease;
+}
+.hero-diagram__card:hover .hero-diagram__card-inner,
+.hero-diagram__card.flipped .hero-diagram__card-inner { transform: rotateY(180deg); }
+.hero-diagram__card-front,
+.hero-diagram__card-back {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 8px 10px;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  line-height: 1.25;
+}
+.hero-diagram__card-front {
+  background: #fff;
+  border: 1.5px solid var(--color-primary);
+  color: var(--color-text);
+  font-size: 0.82rem;
+}
+.hero-diagram__card-back {
+  background: var(--color-primary);
+  border: 1.5px solid var(--color-primary-dark);
+  color: #fff;
+  font-size: 0.68rem;
+  transform: rotateY(180deg);
+  text-decoration: none;
+  cursor: pointer;
+}
+@media (max-width: 960px) {
+  .hero-diagram {
+    aspect-ratio: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 0;
+  }
+  .hero-diagram__lines,
+  .hero-diagram__tag { display: none; }
+  .hero-diagram__hub {
+    position: static;
+    transform: none;
+    width: 100%;
+    grid-column: 1 / -1;
+    order: -1;
+  }
+  .hero-diagram__card {
+    position: static;
+    transform: none;
+    width: 100%;
+  }
+  .hero-diagram__card-front { font-size: 0.8rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-diagram__card,
+  .hero-diagram__hub-inner { animation: none; }
+  .hero-diagram__card-inner,
+  .hero-diagram__hub-inner { transition: none; }
+}
 
 /* Přeblikávání stylů hero CTA tlačítek (cyklus 8 s: 3 s stav + 1 s přechod) */
 @keyframes heroCtaPrimarySwap {
@@ -411,9 +579,11 @@ h3 { font-size: 1.25rem; }
   margin: 10px 0 4px;
 }
 .pricing-card .price small {
+  display: block;
   font-size: 0.95rem;
   font-weight: 500;
   color: var(--color-text-muted);
+  white-space: nowrap;
 }
 .pricing-card ul {
   list-style: none;
@@ -871,13 +1041,12 @@ h3 { font-size: 1.25rem; }
 .features-select { display: none; }
 
 .features-menu { position: sticky; top: 100px; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 8px 0; box-shadow: var(--shadow-sm); }
+.features-menu__title { padding: 12px 20px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--color-text-muted); border-bottom: 1px solid var(--color-border); margin-bottom: 8px; }
+.features-menu__more { margin-top: 8px; padding: 12px 20px; border-top: 1px solid var(--color-border); font-size: 0.85rem; font-weight: 600; color: var(--color-primary); }
 .features-menu__item { display: flex; align-items: center; gap: 12px; padding: 14px 20px; color: var(--color-text); text-decoration: none; font-weight: 500; font-size: 0.95rem; border-left: 3px solid transparent; transition: all 0.15s ease; cursor: pointer; }
 .features-menu__item:hover { background: var(--color-bg-alt); color: var(--color-primary); }
 .features-menu__item.active { background: rgba(242, 138, 73, 0.08); color: var(--color-primary); border-left-color: var(--color-primary); font-weight: 600; }
 .features-menu__item svg { width: 22px; height: 22px; flex-shrink: 0; }
-.features-menu__badge { margin-left: auto; font-size: 0.65rem; font-weight: 700; padding: 2px 6px; border-radius: 4px; background: var(--color-bg-alt); color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
-.features-menu__item.free .features-menu__badge { background: rgba(76, 175, 80, 0.12); color: #2e7d32; }
-.features-menu__item.full .features-menu__badge { background: rgba(242, 138, 73, 0.12); color: var(--color-primary-dark); }
 .features-content { min-width: 0; }
 .feature-section { display: none; padding: 32px 0; scroll-margin-top: 160px; }
 .feature-section.active { display: block; }
@@ -948,7 +1117,7 @@ h3 { font-size: 1.25rem; }
 .pricing-card__badge--cloud { background: rgba(96, 125, 139, 0.12); color: #455a64; }
 .pricing-card h3 { margin: 8px 0 4px; font-size: 1.3rem; }
 .pricing-card .price { font-size: 1.8rem; font-weight: 700; color: var(--color-text); margin: 16px 0; }
-.pricing-card .price small { font-size: 0.9rem; font-weight: 400; color: var(--color-text-muted); }
+.pricing-card .price small { display: block; font-size: 0.9rem; font-weight: 400; color: var(--color-text-muted); white-space: nowrap; }
 .pricing-card ul { text-align: left; margin: 20px 0; padding-left: 20px; }
 .pricing-card ul li { margin-bottom: 8px; font-size: 0.92rem; color: var(--color-text-muted); }
 .pricing-card .btn { margin-top: auto; }
@@ -967,3 +1136,62 @@ h3 { font-size: 1.25rem; }
 .pricing-card__wide-features ul { margin: 0; }
 .pricing-card__wide-action { flex: 0 0 auto; }
 @media (max-width: 960px) { .pricing-card__wide-inner { flex-direction: column; gap: 24px; text-align: center; } .pricing-card__wide-main { flex: none; } }
+
+
+/* ---------- Srovnávací tabulka tarifů ---------- */
+.compare-wrap {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+.compare-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+.compare-table th, .compare-table td { text-align: left; padding: 10px 16px; border-bottom: 1px solid var(--color-border); vertical-align: top; }
+.compare-table thead th {
+  position: sticky;
+  top: 72px;
+  z-index: 2;
+  background: var(--color-text);
+  color: #fff;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  vertical-align: middle;
+}
+.compare-table thead th small { display: block; font-size: 0.68rem; text-transform: none; letter-spacing: 0; opacity: 0.75; }
+.compare-table thead th:not(:first-child), .compare-table tbody td:not(:first-child) { text-align: center; width: 104px; }
+.compare-table tbody tr:hover td { background: var(--color-bg-alt); }
+.compare-table .yes { color: var(--color-primary); font-weight: 700; }
+.compare-table .no { color: var(--color-border); }
+
+.compare-group__head { padding: 0; background: var(--color-bg-alt); }
+.compare-group__toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 13px 16px;
+  background: none;
+  border: 0;
+  font: inherit;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--color-text);
+  text-align: left;
+  cursor: pointer;
+}
+.compare-group__toggle::before {
+  content: "\25B8";
+  display: inline-block;
+  color: var(--color-primary);
+  transition: transform 0.2s ease;
+}
+.compare-group.open .compare-group__toggle::before { transform: rotate(90deg); }
+.compare-group:not(.open) tr:not(.compare-group__row-head) { display: none; }
+
+@media (max-width: 760px) {
+  .compare-table { font-size: 0.82rem; }
+  .compare-table th, .compare-table td { padding: 8px 10px; }
+  .compare-table thead th:not(:first-child), .compare-table tbody td:not(:first-child) { width: 46px; padding-left: 4px; padding-right: 4px; }
+}

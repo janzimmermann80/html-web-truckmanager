@@ -118,29 +118,67 @@
       <div class="container">
         <div class="hero__center">
           <span class="badge">Cloudový TMS s umělou inteligencí</span>
-          <h1>
-            Dopravní a spediční software<br>
-            <span class="hero__rotating" id="rotatingText">
-              <span class="active">odbourává 80 % administrativy</span>
-              <span>AI čte a zapisuje objednávky</span>
-              <span>AI hledá ve spedičních databankách</span>
-              <span>optimalizuje LTL dopravu nebo sklad</span>
-              <span>má aplikaci pro řidiče se skenerem</span>
-              <span>fakturuje dle požadavků zákazníka</span>
-              <span>exportuje faktury do účetnictví</span>
-              <span>počítá režijní náklady a zisk přeprav</span>
-              <span>zpracuje tankovací karty a spotřebu PHM</span>
-              <span>propojuje všechny firemní systémy</span>
-              <span>vytváří diety, pracovní doby, stazky</span>
-              <span>šetří čas celému týmu.</span>
-            </span>
-          </h1>
-          <p class="lead">
-            Certifikováno pro <strong>SK e-faktury</strong> od <strong>1. 1. 2027</strong>.
-          </p>
-          <div class="hero__cta">
-            <a class="btn btn--primary btn--lg" href="vyzkouset-zdarma.html">Vyzkoušet 30 dní zdarma</a>
-            <a class="btn btn--outline btn--lg" href="cenik.html">Základ navždy zdarma</a>
+          <!-- Diagram — karty propojené se středovým hubem -->
+          <div class="hero-diagram" aria-label="Mapa funkcí TruckManageru">
+            <svg class="hero-diagram__lines" viewBox="0 0 1000 700" preserveAspectRatio="none" aria-hidden="true">
+              <g fill="none" stroke="var(--color-primary)" stroke-width="1.5">
+                <!-- Dispečer: hub nahoru, sběrnice nad 2. řadou -->
+                <path d="M500 286 V218"/>
+                <path d="M145 218 H855"/>
+                <path d="M145 201 V218"/><path d="M382 201 V218"/><path d="M618 201 V218"/><path d="M855 201 V218"/>
+                <!-- Spoje z vrchu 2. řady na spodek 1. řady -->
+                <path d="M263 96 V218"/><path d="M500 96 V218"/><path d="M737 96 V218"/>
+                <!-- Řidič: hub vlevo -->
+                <path d="M350 400 H234"/>
+                <path d="M234 317 V547"/>
+                <path d="M190 317 H234"/><path d="M190 433 H234"/><path d="M190 547 H234"/>
+                <!-- Účetní: hub vpravo -->
+                <path d="M650 400 H766"/>
+                <path d="M766 317 V547"/>
+                <path d="M800 317 H766"/><path d="M800 433 H766"/><path d="M800 547 H766"/>
+                <!-- Vedení: hub dolů -->
+                <path d="M500 515 V582"/>
+                <path d="M226 582 H774"/>
+                <path d="M226 582 V630"/><path d="M409 582 V630"/><path d="M591 582 V630"/><path d="M774 582 V630"/>
+              </g>
+            </svg>
+
+            <span class="hero-diagram__tag" style="--x:50%;--y:36%">Dispečeři</span>
+            <span class="hero-diagram__tag" style="--x:29.5%;--y:57%">Řidiči</span>
+            <span class="hero-diagram__tag" style="--x:70.5%;--y:57%">Účetní</span>
+            <span class="hero-diagram__tag" style="--x:50%;--y:78.4%">Vedení</span>
+
+            <div class="hero-diagram__hub">
+              <div class="hero-diagram__hub-inner">
+                <div class="hero-diagram__hub-front">
+                  <img src="../assets/img/tm_logo.svg" alt="TruckManager" class="hero-diagram__logo">
+                  <strong>Dopravní a spediční software s AI</strong>
+                  <small>Propojuje všechny systémy a zaměstnance</small>
+                </div>
+                <a class="hero-diagram__hub-back" href="vyzkouset-zdarma.html">
+                  <strong>Základ navždy zdarma</strong>
+                  <span>Vyzkoušet 30 dní zdarma →</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="hero-diagram__card" style="--x:26.3%;--y:6.7%;--i:0;--w:21%"><div class="hero-diagram__card-inner"><div class="hero-diagram__card-front">AI asistent</div><a class="hero-diagram__card-back" href="funkce.html#ai">Vyhledává auta a náklady ve spedičních databankách</a></div></div>
+            <div class="hero-diagram__card" style="--x:50%;--y:6.7%;--i:1;--w:21%"><div class="hero-diagram__card-inner"><div class="hero-diagram__card-front">Dispečerská plachta</div><a class="hero-diagram__card-back" href="funkce.html#dispecink">Přehled zakázek, tras a vozidel v reálném čase</a></div></div>
+            <div class="hero-diagram__card" style="--x:73.7%;--y:6.7%;--i:2;--w:21%"><div class="hero-diagram__card-inner"><div class="hero-diagram__card-front">Příjem objednávek</div><a class="hero-diagram__card-back" href="funkce.html#objednavky">Rychlý příjem objednávek včetně dispozic pro řidiče</a></div></div>
+            <div class="hero-diagram__card" style="--x:14.5%;--y:21.7%;--i:3;--w:21%"><div class="hero-diagram__card-inner"><div class="hero-diagram__card-front">AI příjem objednávek</div><a class="hero-diagram__card-back" href="funkce.html#ai">AI sama přečte a zapíše soubor s objednávkou</a></div></div>
+            <div class="hero-diagram__card" style="--x:38.2%;--y:21.7%;--i:4;--w:21%"><div class="hero-diagram__card-inner"><div class="hero-diagram__card-front">Digitální objednávka</div><a class="hero-diagram__card-back" href="funkce.html#objednavka-digital">Objednávky bez papíru, rovnou do systému</a></div></div>
+            <div class="hero-diagram__card" style="--x:61.8%;--y:21.7%;--i:5;--w:21%"><div class="hero-diagram__card-inner"><div class="hero-diagram__card-front">Diář nakládek a vykládek</div><a class="hero-diagram__card-back" href="funkce.html#diar">Přesný rozpis nakládek a vykládek s kontrolou průběhu</a></div></div>
+            <div class="hero-diagram__card" style="--x:85.5%;--y:21.7%;--i:6;--w:21%"><div class="hero-diagram__card-inner"><div class="hero-diagram__card-front">LTL, sklady a překládky</div><a class="hero-diagram__card-back" href="funkce.html#sberna">Optimalizace sběrné přepravy a skladů</a></div></div>
+            <div class="hero-diagram__card" style="--x:10.5%;--y:45.3%;--i:7"><div class="hero-diagram__card-inner"><div class="hero-diagram__card-front">Itinerář zastávek</div><a class="hero-diagram__card-back" href="funkce.html#ridici">Plán zastávek a úkolů pro řidiče</a></div></div>
+            <div class="hero-diagram__card" style="--x:10.5%;--y:61.9%;--i:8"><div class="hero-diagram__card-inner"><div class="hero-diagram__card-front">Navigace na zastávky</div><a class="hero-diagram__card-back" href="funkce.html#ridici">Navigace přímo na nakládku a vykládku</a></div></div>
+            <div class="hero-diagram__card" style="--x:10.5%;--y:78.1%;--i:9"><div class="hero-diagram__card-inner"><div class="hero-diagram__card-front">Skenování dokumentů</div><a class="hero-diagram__card-back" href="funkce.html#ridici">CMR a dodací listy přímo ve vozidle</a></div></div>
+            <div class="hero-diagram__card" style="--x:88.5%;--y:45.3%;--i:10"><div class="hero-diagram__card-inner"><div class="hero-diagram__card-front">Fakturace</div><a class="hero-diagram__card-back" href="funkce.html#fakturace">Faktury jednotlivě i hromadně, odeslání dle přání zákazníka</a></div></div>
+            <div class="hero-diagram__card" style="--x:88.5%;--y:61.9%;--i:11"><div class="hero-diagram__card-inner"><div class="hero-diagram__card-front">Banka</div><a class="hero-diagram__card-back" href="funkce.html#banka">Zpracování výpisů a hromadné platební příkazy</a></div></div>
+            <div class="hero-diagram__card" style="--x:88.5%;--y:78.1%;--i:12"><div class="hero-diagram__card-inner"><div class="hero-diagram__card-front">Upomínky</div><a class="hero-diagram__card-back" href="funkce.html#upominky">Automatické upomínky neuhrazených faktur</a></div></div>
+            <div class="hero-diagram__card" style="--x:22.6%;--y:97%;--i:13"><div class="hero-diagram__card-inner"><div class="hero-diagram__card-front">Tržby a zisk</div><a class="hero-diagram__card-back" href="funkce.html#vozidla">Náklady na přepravu a zisk z každé zakázky</a></div></div>
+            <div class="hero-diagram__card" style="--x:40.9%;--y:97%;--i:14"><div class="hero-diagram__card-inner"><div class="hero-diagram__card-front">Vyhodnocení PHM</div><a class="hero-diagram__card-back" href="funkce.html#vozidla">Mýto a spotřeba PHM dle vytížení vozidel</a></div></div>
+            <div class="hero-diagram__card" style="--x:59.1%;--y:97%;--i:15"><div class="hero-diagram__card-inner"><div class="hero-diagram__card-front">Servis a údržba vozidel</div><a class="hero-diagram__card-back" href="funkce.html#servis">Plánování servisu, STK a údržby vozového parku</a></div></div>
+            <div class="hero-diagram__card" style="--x:77.4%;--y:97%;--i:16"><div class="hero-diagram__card-inner"><div class="hero-diagram__card-front">Hospodářské listy</div><a class="hero-diagram__card-back" href="funkce.html#vykazy">Diety, pracovní doba, stazky — automaticky</a></div></div>
           </div>
         </div>
       </div>
