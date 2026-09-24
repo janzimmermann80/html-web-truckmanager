@@ -124,10 +124,16 @@
   if (window.location.search.indexOf("odeslano=1") > -1) {
     var form = document.querySelector("form.form");
     if (form) {
+      var lang = (document.documentElement.getAttribute("lang") || "cs").toLowerCase();
+      var messages = {
+        cs: "<strong>Děkujeme!</strong> Vaše zpráva byla úspěšně odeslána. Ozveme se vám co nejdříve.",
+        sk: "<strong>Ďakujeme!</strong> Vaša správa bola úspešne odoslaná. Ozveme sa vám čo najskôr.",
+        en: "<strong>Thank you!</strong> Your message has been sent successfully. We will get back to you as soon as possible."
+      };
       var success = document.createElement("div");
       success.className = "alert alert--success";
       success.style.cssText = "background:#d4edda;color:#155724;padding:16px 20px;border-radius:8px;margin-bottom:24px;border:1px solid #c3e6cb;";
-      success.innerHTML = "<strong>Děkujeme!</strong> Vaše zpráva byla úspěšně odeslána. Ozveme se vám co nejdříve.";
+      success.innerHTML = messages[lang] || messages.cs;
       form.parentNode.insertBefore(success, form);
       form.style.display = "none";
     }

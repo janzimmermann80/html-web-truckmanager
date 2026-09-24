@@ -3,8 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TruckManager — Dopravný a špedičný software</title>
-  <meta name="description" content="TruckManager — TMS systém na riadenie prepravy. Dispečing, objednávky, automatická fakturácia, GPS sledovanie, aplikácia pre vodičov. Vyskúšajte na 30 dní zadarmo.">
+  <title>Jeden systém pre celú dopravnú firmu | TruckManager — dopravný a špedičný software s AI</title>
+  <meta name="description" content="TruckManager je jeden systém pre celú dopravnú firmu — dispečing, aplikácia pre vodičov, automatická fakturácia, vozový park s GPS a AI, ktorá číta objednávky. Základ zadarmo, plná verzia na 30 dní zadarmo.">
+  <meta name="keywords" content="dopravný software, špedičný software, TMS systém, dispečerský software, software pre dopravcov, fakturácia doprava, aplikácia pre vodičov, vozový park GPS, AI doprava">
+  <meta name="author" content="TruckManager">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://www.truckmanager.eu/sk/">
+
+  <!-- Jazykové verzie -->
+  <link rel="alternate" hreflang="cs" href="https://www.truckmanager.eu/cs/">
+  <link rel="alternate" hreflang="sk" href="https://www.truckmanager.eu/sk/">
+  <link rel="alternate" hreflang="en" href="https://www.truckmanager.eu/en/">
+  <link rel="alternate" hreflang="x-default" href="https://www.truckmanager.eu/cs/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="TruckManager">
+  <meta property="og:title" content="Jeden systém pre celú dopravnú firmu — TruckManager">
+  <meta property="og:description" content="Dispečing, vodiči, fakturácia aj riadenie firmy na jednom mieste. AI číta objednávky a hľadá náklady. Základná verzia zadarmo.">
+  <meta property="og:url" content="https://www.truckmanager.eu/sk/">
+  <meta property="og:image" content="https://www.truckmanager.eu/assets/img/og-image.png">
+  <meta property="og:locale" content="sk_SK">
+  <meta property="og:locale:alternate" content="cs_CZ">
+  <meta property="og:locale:alternate" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Jeden systém pre celú dopravnú firmu — TruckManager">
+  <meta name="twitter:description" content="Dispečing, vodiči, fakturácia aj riadenie firmy na jednom mieste. AI číta objednávky a hľadá náklady. Základná verzia zadarmo.">
+  <meta name="twitter:image" content="https://www.truckmanager.eu/assets/img/og-image.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon/TM_logo16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon/TM_logo32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicon/TM_logo180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="../assets/img/favicon/TM_logo192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="../assets/img/favicon/TM_logo512x512.png">
+
+  <!-- Štruktúrované dáta: SoftwareApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "TruckManager",
+    "applicationCategory": "BusinessApplication",
+    "applicationSubCategory": "Transportation Management System",
+    "operatingSystem": "Web, Android, iOS",
+    "description": "Jeden systém pre celú dopravnú firmu — dispečing, aplikácia pre vodičov, automatická fakturácia, vozový park s GPS a umelá inteligencia, ktorá číta objednávky a hľadá náklady.",
+    "url": "https://www.truckmanager.eu/sk/",
+    "inLanguage": "sk",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "description": "Základ navždy zadarmo, plná verzia na 30 dní zadarmo"
+    },
+    "provider": {
+      "@type": "Organization",
+      "name": "TruckManager",
+      "url": "https://www.truckmanager.eu"
+    }
+  }
+  </script>
+
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
@@ -12,14 +73,13 @@
   <header class="site-header">
     <div class="container site-header__inner">
       <a class="site-logo" href="index.html">
-        <span class="logo-tm">Truck</span>Manager
+        <img src="../assets/img/tm_logo_white.svg" alt="TruckManager" class="logo-img">
       </a>
 
       <nav class="main-nav" id="mainNav">
         <ul>
           <li><a href="index.html" class="active">Úvod</a></li>
           <li><a href="funkce.html">Funkcie</a></li>
-          <li><a href="cenik.html">Cenník</a></li>
           <li><a href="kontakt.html">Kontakt</a></li>
         </ul>
       </nav>
@@ -33,8 +93,7 @@
             <li><a href="../en/index.html">English</a></li>
           </ul>
         </div>
-        <button class="theme-toggle" type="button" aria-label="Tmavý režim">🌙</button>
-        <a class="btn btn--primary btn--sm" href="vyzkouset-zdarma.html">Vyskúšať zadarmo</a>
+        <a class="btn btn--primary btn--sm btn--pill header-cta" href="vyzkouset-zdarma.html">Vyskúšať zadarmo</a>
         <button class="nav-toggle" type="button" aria-label="Menu">☰</button>
       </div>
     </div>
@@ -43,130 +102,267 @@
   <main>
 
     <!-- HERO -->
-    <section class="hero">
-      <div class="container hero__grid">
-        <div>
-          <span class="badge">TMS — systém riadenia prepravy</span>
-          <h1>Dopravný a špedičný software, ktorý šetrí čas aj náklady</h1>
-          <p class="lead">
-            Naplánujeme vodičom trasy, naskenujeme dokumenty, vystavíme faktúry
-            a vyhodnotíme zisky z prepráv. Ušetrite až 75&nbsp;% času a 30&nbsp;% nákladov.
-          </p>
-          <div class="hero__cta">
-            <a class="btn btn--primary btn--lg" href="vyzkouset-zdarma.html">Vyskúšať na 30 dní zadarmo</a>
-            <a class="btn btn--outline btn--lg" href="funkce.html">Prehliadnuť funkcie</a>
+    <section class="hero-home">
+      <div class="container">
+        <div class="hero-home__inner">
+          <div class="hero-home__row">
+            <h1>Jeden systém pre celú<br><span class="accent">dopravnú firmu</span></h1>
+            <div class="hero-home__cta">
+              <a class="btn btn--primary btn--lg btn--pill btn--arrow" href="vyzkouset-zdarma.html">
+                Vyskúšať zadarmo
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+            </div>
           </div>
-        </div>
-        <div class="hero__media">
-          <div class="media-placeholder">[ Screenshot aplikácie — dispečerská plachta ]</div>
         </div>
       </div>
     </section>
 
-    <!-- HLAVNÉ FUNKCIE -->
-    <section class="section" id="funkce">
+    <!-- 4 BANNEROVÉ KARTY -->
+    <section class="section" style="padding-top: 24px;">
       <div class="container">
-        <div class="section__head">
-          <h2>Všetko pre riadenie dopravy na jednom mieste</h2>
-          <p>Od prijatia objednávky cez realizáciu prepravy až po fakturáciu a vyhodnotenie.</p>
-        </div>
-        <div class="grid grid--3">
-          <div class="card">
-            <div class="card__icon">🗺️</div>
-            <h3>Dispečerská plachta</h3>
-            <p>Dynamický prehľad vozidiel, vodičov a zákaziek. Plánovanie trás s dojazdovými časmi v reálnom čase.</p>
-          </div>
-          <div class="card">
-            <div class="card__icon">📦</div>
-            <h3>Príjem objednávok</h3>
-            <p>Rýchly príjem objednávok vrátane prípravy dispozícií pre vodičov. Všetko farebne rozlíšené podľa stavu.</p>
-          </div>
-          <div class="card">
-            <div class="card__icon">🧾</div>
-            <h3>Automatická fakturácia</h3>
-            <p>Faktúry z reálnych dát z GPS (hmotnosť, km). Hromadná fakturácia a automatické odoslanie e-mailom.</p>
-          </div>
-          <div class="card">
-            <div class="card__icon">📱</div>
-            <h3>Aplikácia pre vodičov</h3>
-            <p>Rozpis nakládok a vykládok v telefóne vodiča. Ovládanie len 4 tlačidlami, skenovanie dokumentov vo vozidle.</p>
-          </div>
-          <div class="card">
-            <div class="card__icon">📊</div>
-            <h3>Hospodárske výsledky</h3>
-            <p>Detailné vyhodnotenie tržieb a nákladov na každé vozidlo. Grafy spotreby a zisku.</p>
-          </div>
-          <div class="card">
-            <div class="card__icon">📍</div>
-            <h3>GPS sledovanie</h3>
-            <p>Napojenie na všetky bežné GPS systémy. Aktuálna poloha vozidiel priamo v dispečingu.</p>
-          </div>
-        </div>
-        <p class="text-center" style="margin-top: 36px;">
-          <a class="btn btn--outline" href="funkce.html">Zobraziť všetky funkcie</a>
+        <h2 class="text-center">Všetko, čo dopravná firma potrebuje</h2>
+        <p class="text-center" style="color: var(--color-text-muted); max-width: 640px; margin: 0 auto 48px;">
+          Od príjmu objednávky cez dispečing a vodičov až po fakturáciu a prehľady pre vedenie.
         </p>
+        <div class="banner-grid">
+
+          <article class="banner-card">
+            <div class="banner-card__media" data-img style="background-image: linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,.68)), url('../assets/img/banners/dispecink.jpg');" role="img" aria-label="Dispečing má všetko pod kontrolou">
+              <h3 class="banner-card__title">Dispečing<span>má všetko pod kontrolou.</span></h3>
+            </div>
+            <div class="banner-card__features">
+              <div class="banner-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>Prehľad zákaziek</div>
+              <div class="banner-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z"/></svg>Komunikácia s vodičmi</div>
+              <div class="banner-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>GPS a poloha vozidiel</div>
+              <div class="banner-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></svg>Rýchle plánovanie a zmeny</div>
+            </div>
+          </article>
+
+          <article class="banner-card">
+            <div class="banner-card__media" data-img style="background-image: linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,.68)), url('../assets/img/banners/ridic.jpg');" role="img" aria-label="Vodič vie, čo má robiť">
+              <h3 class="banner-card__title">Vodič vie,<span>čo má robiť.</span></h3>
+            </div>
+            <div class="banner-card__features">
+              <div class="banner-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 19-9-9 19-2-8-8-2z"/></svg>Navigácia a trasa</div>
+              <div class="banner-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>Dokumenty a pokyny</div>
+              <div class="banner-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z"/></svg>Komunikácia s dispečingom</div>
+              <div class="banner-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Prehľad o zákazkách a čase</div>
+            </div>
+          </article>
+
+          <article class="banner-card">
+            <div class="banner-card__media" data-img style="background-image: linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,.68)), url('../assets/img/banners/fakturace.jpg');" role="img" aria-label="Faktúry bez starostí, rýchlo a prehľadne">
+              <h3 class="banner-card__title">Faktúry bez starostí.<span>Rýchlo a prehľadne.</span></h3>
+            </div>
+            <div class="banner-card__features">
+              <div class="banner-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 15h6"/><path d="M9 11h2"/></svg>E-faktúry 2027</div>
+              <div class="banner-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>Automatické spracovanie</div>
+              <div class="banner-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>Kontrola dokladov</div>
+              <div class="banner-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="10" width="3" height="8"/><rect x="12" y="6" width="3" height="12"/><rect x="17" y="13" width="3" height="5"/></svg>Napojenie na účtovníctvo</div>
+            </div>
+          </article>
+
+          <article class="banner-card">
+            <div class="banner-card__media" data-img style="background-image: linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,.68)), url('../assets/img/banners/vedeni.jpg');" role="img" aria-label="Riadenie firmy aj na cestách">
+              <h3 class="banner-card__title">Riadenie firmy<span>aj na cestách.</span></h3>
+            </div>
+            <div class="banner-card__features">
+              <div class="banner-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Prehľad v reálnom čase</div>
+              <div class="banner-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>Kľúčové ukazovatele a reporty</div>
+              <div class="banner-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-9-5"/><path d="M6 16a6 6 0 0 0 9 5"/><circle cx="12" cy="12" r="3"/></svg>Rozhodovanie na diaľku</div>
+              <div class="banner-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>Váš biznis pod kontrolou</div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 6 KATEGÓRIÍ FUNKCIÍ -->
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="cat-grid">
+
+          <article class="cat-card">
+            <div class="cat-card__head">
+              <span class="cat-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect width="8" height="4" x="8" y="2" rx="1"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg></span>
+              <h3>Zákazky a objednávky</h3>
+            </div>
+            <ul class="cat-list">
+              <li>Celá zákazka na jednej obrazovke</li>
+              <li>Itinerár, výpočet trasy a km</li>
+              <li>Kontrola marže pri uložení</li>
+              <li>Objednávka pre dopravcu + storno</li>
+              <li>Hromadný import z tabuľky či PDF</li>
+            </ul>
+          </article>
+
+          <article class="cat-card">
+            <div class="cat-card__head">
+              <span class="cat-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+              <h3>Dispečing a plánovanie</h3>
+            </div>
+            <ul class="cat-list">
+              <li>Plachta dispečera — časová os</li>
+              <li>Priradenie zákazky drag &amp; drop</li>
+              <li>Indikácia kolízií a limitov AETR</li>
+              <li>Diár dispečera a plánovač</li>
+              <li>Mapa všetkých vozidiel naživo</li>
+            </ul>
+          </article>
+
+          <article class="cat-card">
+            <div class="cat-card__head">
+              <span class="cat-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg></span>
+              <h3>Fakturácia a financie</h3>
+            </div>
+            <ul class="cat-list">
+              <li>Faktúra zo zákazky aj hromadne</li>
+              <li>Prijaté faktúry, párovanie</li>
+              <li>Saldo, pohľadávky, upomienky</li>
+              <li>Import výpisu, SEPA, QR platba</li>
+              <li>Faktúra v 6 jazykoch</li>
+            </ul>
+          </article>
+
+          <article class="cat-card">
+            <div class="cat-card__head">
+              <span class="cat-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18h-5"/><path d="M14 9h4l4 4v4a1 1 0 0 1-1 1h-2"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg></span>
+              <h3>Vozový park a GPS</h3>
+            </div>
+            <ul class="cat-list">
+              <li>Živá poloha, história jázd</li>
+              <li>Kniha jázd, tachograf</li>
+              <li>Servis, STK, emisné kontroly</li>
+              <li>Import z palivových kariet</li>
+              <li>Vyhodnotenie spotreby</li>
+            </ul>
+          </article>
+
+          <article class="cat-card">
+            <div class="cat-card__head">
+              <span class="cat-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg></span>
+              <h3>Sklad, zvoz a rozvoz</h3>
+            </div>
+            <ul class="cat-list">
+              <li>Plán zvozu a rozvozu</li>
+              <li>Naskladnenie a vyskladnenie</li>
+              <li>Dokládky a LTL zásielky</li>
+              <li>Prekládka a viac prevádzok</li>
+              <li>Zostava „Na rozvoz“</li>
+            </ul>
+          </article>
+
+          <article class="cat-card">
+            <div class="cat-card__head">
+              <span class="cat-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="10" width="3" height="8"/><rect x="12" y="6" width="3" height="12"/><rect x="17" y="13" width="3" height="5"/></svg></span>
+              <h3>Prehľady a doklady</h3>
+            </div>
+            <ul class="cat-list">
+              <li>Tržby a zisk podľa zákazníka</li>
+              <li>Štatistiky zákaziek a faktúr</li>
+              <li>CMR, EPD, carnet de route</li>
+              <li>Emisná kalkulačka CO₂</li>
+              <li>Exporty do XLS, zlučovanie PDF</li>
+            </ul>
+          </article>
+
+        </div>
       </div>
     </section>
 
     <!-- INTEGRÁCIE -->
-    <section class="section section--alt" id="integrace">
+    <section class="section" aria-label="Integrácie">
       <div class="container">
-        <div class="section__head">
-          <h2>Integrované systémy</h2>
-          <p>Prepojíme TruckManager s vašimi existujúcimi systémami — a s ľubovoľným ďalším.</p>
-        </div>
-        <div class="grid grid--3">
-          <div class="card">
-            <h3>GPS systémy</h3>
-            <p>[Logá: Optifleet, Volvo Connect, FleetManager, FLEETBOARD, Webfleet, SWS, GPS Dozor, Positrex…]</p>
+        <h2 class="text-center">Prepojenie so všetkými vašimi systémami</h2>
+        <p class="integrations__intro">TruckManager si automaticky vymieňa dáta s GPS jednotkami, tankovacími kartami, databankami aj účtovnými systémami.</p>
+        <div class="integrations">
+
+          <div class="integrations__group">
+            <h3 class="integrations__label">
+              <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg></span>
+              Importujeme dáta z
+            </h3>
+            <div class="integrations__logos">
+              <div class="int-logo"><img src="../assets/img/integrace/renault.svg" alt="Renault Optifleet"></div>
+              <div class="int-logo"><img src="../assets/img/integrace/scania.svg" alt="Scania Fleet Manager"></div>
+              <div class="int-logo"><img src="../assets/img/integrace/mercedes.svg" alt="Mercedes-Benz Fleetboard"></div>
+              <div class="int-logo"><img src="../assets/img/integrace/webfleet.png" alt="Webfleet"></div>
+              <div class="int-logo"><img src="../assets/img/integrace/gpsdozor.svg" alt="GPS Dozor"></div>
+              <div class="int-logo"><img src="../assets/img/integrace/webdispecink.svg" alt="Webdispečink"></div>
+              <div class="int-logo"><img src="../assets/img/integrace/commander.svg" alt="Commander"></div>
+              <div class="int-logo"><img src="../assets/img/integrace/logiscare.svg" alt="Logiscare"></div>
+              <div class="int-logo"><img src="../assets/img/integrace/positrex.svg" alt="Positrex"></div>
+              <div class="int-logo"><img src="../assets/img/integrace/shell.svg" alt="Shell"></div>
+              <div class="int-logo"><img src="../assets/img/integrace/dkv.svg" alt="DKV"></div>
+              <div class="int-logo"><img src="../assets/img/integrace/uta.svg" alt="UTA"></div>
+              <div class="int-logo"><img src="../assets/img/integrace/eurowag.png" alt="Eurowag"></div>
+              <div class="int-logo"><img src="../assets/img/integrace/schmitz.png" alt="Schmitz Cargobull"></div>
+            </div>
           </div>
-          <div class="card">
-            <h3>Účtovný software</h3>
-            <p>[Logá: Pohoda, Money, DUEL, Ježek, Premier, SunSoft…]</p>
+
+          <div class="integrations__group">
+            <h3 class="integrations__label">
+              <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21V9"/><path d="m7 14 5-5 5 5"/><path d="M5 3h14"/></svg></span>
+              Exportujeme dáta do
+            </h3>
+            <div class="integrations__logos">
+              <div class="int-logo"><img src="../assets/img/integrace/timocom.svg" alt="Timocom"></div>
+              <div class="int-logo"><img src="../assets/img/integrace/transeu.svg" alt="Trans.eu"></div>
+              <div class="int-logo"><img src="../assets/img/integrace/raaltrans.svg" alt="RaalTrans"></div>
+              <div class="int-logo"><img src="../assets/img/integrace/pohoda.svg" alt="Pohoda"></div>
+              <div class="int-logo"><img src="../assets/img/integrace/money.png" alt="Money"></div>
+              <div class="int-logo"><img src="../assets/img/integrace/duel.png" alt="DUEL"></div>
+            </div>
           </div>
-          <div class="card">
-            <h3>Špedičné databanky a tankovacie karty</h3>
-            <p>[Logá: Timocom, Trans.eu, Shell, DKV, UTA, Eurowag…]</p>
-          </div>
+
         </div>
       </div>
     </section>
 
-    <!-- ŠTATISTIKY -->
+    <!-- AI PANEL -->
     <section class="section">
       <div class="container">
-        <div class="stats">
-          <div class="stat">
-            <div class="stat__value">25+</div>
-            <div class="stat__label">rokov skúseností</div>
+        <div class="ai-panel">
+          <div class="ai-panel__head">
+            <span class="ai-panel__eyebrow">Umelá inteligencia</span>
+            <h2>AI, ktorá vám reálne ušetrí prácu.</h2>
+            <p>
+              TruckManager prináša moderné nástroje umelej inteligencie, ktoré zjednodušia
+              každodennú prevádzku a pomôžu vám robiť rýchlejšie a lepšie rozhodnutia.
+            </p>
           </div>
-          <div class="stat">
-            <div class="stat__value">700+</div>
-            <div class="stat__label">firiem</div>
-          </div>
-          <div class="stat">
-            <div class="stat__value">24/7</div>
-            <div class="stat__label">online prístup</div>
-          </div>
-          <div class="stat">
-            <div class="stat__value">75 %</div>
-            <div class="stat__label">úspora času</div>
-          </div>
-          <div class="stat">
-            <div class="stat__value">30 %</div>
-            <div class="stat__label">úspora nákladov</div>
+          <div class="ai-cards">
+            <article class="ai-card">
+              <div class="ai-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div>
+              <h3>AI príjem objednávky</h3>
+              <p>Z e-mailu, PDF alebo fotky rozpozná kľúčové informácie a automaticky založí zákazku do systému.</p>
+            </article>
+            <article class="ai-card">
+              <div class="ai-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><path d="M12 7v4"/><path d="M12 11 6.5 17"/><path d="M12 11l5.5 6"/></svg></div>
+              <h3>AI dispečer hľadá náklady</h3>
+              <p>Analyzuje trh a navrhuje najlepšie varianty trás, dopravcov a vozidiel.</p>
+            </article>
+            <article class="ai-card">
+              <div class="ai-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg></div>
+              <h3>AI asistent nad dátami</h3>
+              <p>Odpovie na vaše otázky, pripraví prehľady a pomôže s rozhodovaním.</p>
+            </article>
           </div>
         </div>
       </div>
     </section>
 
     <!-- CTA -->
-    <section class="section section--alt">
+    <section class="section" style="padding-top: 0;">
       <div class="container">
         <div class="cta-band">
-          <h2>Vyskúšajte TruckManager zadarmo</h2>
-          <p>Vyskúšajte všetky funkcie na 30 dní zadarmo. Bez záväzkov, bez platobnej karty.</p>
-          <a class="btn btn--primary btn--lg" href="vyzkouset-zdarma.html">Chcem vyskúšať zadarmo</a>
+          <h2>Začnite ešte dnes</h2>
+          <p>Vyskúšajte všetky funkcie na 30 dní zadarmo.</p>
+          <div class="hero-home__cta" style="justify-content: center;">
+            <a class="btn btn--primary btn--lg btn--pill" href="vyzkouset-zdarma.html">Vyskúšať 30 dní zadarmo</a>
+          </div>
         </div>
       </div>
     </section>
@@ -177,43 +373,57 @@
     <div class="container">
       <div class="site-footer__grid">
         <div>
-          <h4>1. Česká obchodní, s.r.o.</h4>
+          <a class="site-logo" href="index.html"><img src="../assets/img/tm_logo_white.svg" alt="TruckManager" class="logo-img"></a>
           <p class="about">
-            Od roku 1995 vyvíjame software a informačné systémy pre dopravu a špedíciu.
-            Od roku 2005 aj GPS sledovacie systémy pre cestnú nákladnú dopravu.
+            Moderný systém pre dopravné firmy.<br>
+            Všetko, čo potrebujete, na jednom mieste.
           </p>
         </div>
         <div>
           <h4>Produkt</h4>
           <ul>
             <li><a href="funkce.html">Funkcie</a></li>
-            <li><a href="cenik.html">Cenník</a></li>
             <li><a href="vyzkouset-zdarma.html">Vyskúšať zadarmo</a></li>
           </ul>
         </div>
         <div>
-          <h4>O nás</h4>
+          <h4>Spoločnosť</h4>
           <ul>
             <li><a href="kontakt.html">Kontakt</a></li>
-            <li><a href="#">Spoločnosť</a></li>
-            <li><a href="#">Kariéra</a></li>
+            <li><a href="tel:+420737288090">+420 737 288 090</a></li>
           </ul>
         </div>
         <div>
-          <h4>Kontakt</h4>
+          <h4>Podpora</h4>
           <ul>
-            <li><a href="tel:+420737288090">+420 737 288 090</a></li>
-            <li><a href="kontakt.html">Kontaktný formulár</a></li>
+            <li><a href="kontakt.html">Zákaznícka podpora</a></li>
+            <li><a href="vyzkouset-zdarma.html">Nezáväzný dopyt</a></li>
           </ul>
         </div>
       </div>
       <div class="site-footer__bottom">
-        <span>© 2026 1. Česká obchodní, s.r.o.</span>
-        <span>TruckManager — dopravný a špedičný software</span>
+        <span>© 2026 1. Česká obchodní, s.r.o. — TruckManager, dopravný a špedičný software</span>
+        <span><a href="#">Súkromie</a> · <a href="#">Podmienky používania</a> · <a href="#">Cookies</a></span>
       </div>
     </div>
   </footer>
 
   <script src="../assets/js/main.js"></script>
+
+  <!-- Cookie lišta -->
+  <div class="cookie-banner" role="dialog" aria-label="Cookie lišta">
+    <div class="container">
+      <div class="cookie-banner__inner">
+        <p class="cookie-banner__text">
+          Používame cookies na analýzu návštevnosti a zlepšenie používateľského prostredia.
+          Súhlasíte s ich použitím?
+        </p>
+        <div class="cookie-banner__actions">
+          <button class="cookie-banner__btn cookie-banner__btn--decline" data-cookie-decline>Odmietnuť</button>
+          <button class="cookie-banner__btn cookie-banner__btn--accept" data-cookie-accept>Súhlasím</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

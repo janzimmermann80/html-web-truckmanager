@@ -7,20 +7,23 @@
 :root {
   --color-primary: #f28a49;
   --color-primary-dark: #d9722f;
+  --color-primary-light: #ff9d63;
   --color-heart: #d6333f;
-  --color-accent: #0d5fd7;
-  --color-bg: #ffffff;
-  --color-bg-alt: #f4f7fb;
-  --color-surface: #ffffff;
-  --color-text: #16212e;
-  --color-text-muted: #5b6b7c;
-  --color-border: #e2e8f0;
-  --color-header-bg: rgba(14, 20, 28, 0.95);
-  --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.06);
-  --shadow-md: 0 8px 24px rgba(16, 24, 40, 0.10);
-  --shadow-lg: 0 20px 48px rgba(16, 24, 40, 0.16);
-  --radius: 14px;
-  --radius-sm: 8px;
+  --color-accent: #f28a49;
+  --color-bg: #17161a;
+  --color-bg-alt: #1e1c20;
+  --color-surface: #242227;
+  --color-surface-2: #2b2830;
+  --color-text: #f4f3f6;
+  --color-text-muted: #a5a1ad;
+  --color-border: rgba(255, 255, 255, 0.09);
+  --color-border-strong: rgba(255, 255, 255, 0.16);
+  --color-header-bg: rgba(20, 19, 23, 0.85);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.55);
+  --radius: 16px;
+  --radius-sm: 10px;
   --container: 1180px;
   --font: "Segoe UI", "Inter", system-ui, -apple-system, sans-serif;
 }
@@ -35,7 +38,11 @@ body {
   font-size: 17px;
   line-height: 1.65;
   color: var(--color-text);
-  background: var(--color-bg);
+  background-color: var(--color-bg);
+  background-image:
+    radial-gradient(1100px 600px at 85% -5%, rgba(242, 138, 73, 0.10), transparent 60%),
+    radial-gradient(900px 500px at 0% 0%, rgba(242, 138, 73, 0.05), transparent 55%);
+  background-attachment: fixed;
 }
 
 img { max-width: 100%; height: auto; }
@@ -528,11 +535,13 @@ h3 { font-size: 1.25rem; }
 .cta-band {
   background: linear-gradient(120deg, var(--color-primary), var(--color-primary-dark));
   border-radius: var(--radius);
-  padding: 56px;
+  padding: 38px 40px;
+  max-width: 840px;
+  margin: 0 auto;
   text-align: center;
 }
-.cta-band h2 { color: #fff; }
-.cta-band p { color: rgba(255, 255, 255, 0.85); max-width: 560px; margin: 0 auto 28px; }
+.cta-band h2 { color: #fff; font-size: 1.7rem; margin-bottom: 10px; }
+.cta-band p { color: rgba(255, 255, 255, 0.85); max-width: 520px; margin: 0 auto 22px; font-size: 1rem; }
 .cta-band .btn--primary {
   background: #fff;
   color: var(--color-primary);
@@ -673,6 +682,7 @@ h3 { font-size: 1.25rem; }
   gap: 40px;
   margin-bottom: 48px;
 }
+.site-footer .site-logo img { height: 30px; margin-bottom: 16px; }
 .site-footer h4 { font-size: 1rem; margin-bottom: 14px; }
 .site-footer ul { list-style: none; margin: 0; padding: 0; }
 .site-footer ul li { margin-bottom: 8px; }
@@ -809,7 +819,7 @@ h3 { font-size: 1.25rem; }
 /* ---------- Běžící pás s logy (marquee) ---------- */
 .logo-marquee {
   padding: 36px 0 28px;
-  background: #ffffff;
+  background: var(--color-bg-alt);
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
   overflow: hidden;
@@ -834,15 +844,19 @@ h3 { font-size: 1.25rem; }
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 44px;
-  min-width: 100px;
+  height: 56px;
+  min-width: 132px;
+  padding: 0 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
 }
 .marquee__item img {
-  max-height: 36px;
-  max-width: 120px;
+  max-height: 32px;
+  max-width: 110px;
   width: auto;
-  filter: grayscale(40%);
-  opacity: 0.75;
+  filter: grayscale(20%);
+  opacity: 0.9;
   transition: filter 0.2s ease, opacity 0.2s ease;
 }
 .marquee__item img:hover {
@@ -1152,7 +1166,7 @@ h3 { font-size: 1.25rem; }
   position: sticky;
   top: 72px;
   z-index: 2;
-  background: var(--color-text);
+  background: var(--color-surface-2);
   color: #fff;
   font-size: 0.78rem;
   text-transform: uppercase;
@@ -1194,4 +1208,347 @@ h3 { font-size: 1.25rem; }
   .compare-table { font-size: 0.82rem; }
   .compare-table th, .compare-table td { padding: 8px 10px; }
   .compare-table thead th:not(:first-child), .compare-table tbody td:not(:first-child) { width: 46px; padding-left: 4px; padding-right: 4px; }
+}
+
+/* ============================================================
+   REDESIGN 2026 — tmavý infografický vzhled
+   ============================================================ */
+
+/* ---------- Domácí hero ---------- */
+.hero-home {
+  padding: 64px 0 44px;
+}
+.hero-home__inner {
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+}
+.hero-home__row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+.hero-home__row h1 {
+  margin: 0;
+}
+.hero-home__row .hero-home__cta {
+  justify-content: center;
+}
+.hero-home__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 18px;
+}
+.hero-home h1 {
+  font-size: clamp(2.4rem, 5.2vw, 3.9rem);
+  line-height: 1.05;
+  margin: 0 0 20px;
+}
+.hero-home h1 .accent { color: var(--color-primary); }
+.hero-home__lead {
+  font-size: 1.15rem;
+  color: var(--color-text-muted);
+  max-width: 560px;
+  margin: 0 0 28px;
+}
+.hero-home__cta { display: flex; gap: 14px; flex-wrap: wrap; }
+.btn--pill { border-radius: 999px; }
+.btn--arrow { display: inline-flex; align-items: center; gap: 10px; }
+.btn--arrow svg { width: 18px; height: 18px; }
+
+/* ---------- Bannerové karty (2×2) ---------- */
+.banner-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+.banner-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.banner-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-border-strong);
+}
+.banner-card__media {
+  position: relative;
+  aspect-ratio: 16 / 7;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,0.05), rgba(0,0,0,0.55)),
+    linear-gradient(135deg, #2f2b33, #3a2e28);
+  display: flex;
+  align-items: flex-end;
+  padding: 22px 24px;
+}
+.banner-card__media[data-img] { background-size: cover; background-position: center; }
+.banner-card__title {
+  position: relative;
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.15;
+  color: #fff;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+}
+.banner-card__title span { display: block; color: var(--color-primary); }
+.banner-card__ph {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  border: 1px dashed rgba(255,255,255,0.25);
+  border-radius: 6px;
+  padding: 3px 8px;
+}
+.banner-card__features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 20px;
+  padding: 20px 22px;
+}
+.banner-feature {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--color-text);
+}
+.banner-feature svg {
+  width: 22px;
+  height: 22px;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+/* ---------- Kategoriové karty (2×3) ---------- */
+.cat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+.cat-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 28px 26px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.cat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-border-strong);
+}
+.cat-card__head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+.cat-card__icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(242, 138, 73, 0.12);
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+.cat-card__icon svg { width: 24px; height: 24px; }
+.cat-card__head h3 { margin: 0; font-size: 1.2rem; }
+.cat-list { list-style: none; margin: 0; padding: 0; }
+.cat-list li {
+  position: relative;
+  padding: 9px 0 9px 28px;
+  color: var(--color-text-muted);
+  font-size: 0.96rem;
+  border-top: 1px solid var(--color-border);
+}
+.cat-list li:first-child { border-top: none; }
+.cat-list li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  transform: translateY(-50%);
+  background: var(--color-primary);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14'/%3E%3Cpath d='m12 5 7 7-7 7'/%3E%3C/svg%3E") center / contain no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14'/%3E%3Cpath d='m12 5 7 7-7 7'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+/* ---------- AI panel ---------- */
+.ai-panel {
+  background:
+    radial-gradient(700px 400px at 78% 30%, rgba(242, 138, 73, 0.12), transparent 60%),
+    var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 24px;
+  padding: 56px;
+}
+.ai-panel__head { max-width: 640px; margin-bottom: 40px; }
+.ai-panel__eyebrow {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 14px;
+}
+.ai-panel__head h2 { font-size: clamp(1.8rem, 3.4vw, 2.6rem); margin-bottom: 16px; }
+.ai-panel__head p { color: var(--color-text-muted); margin: 0; font-size: 1.08rem; }
+.ai-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.ai-card {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 26px;
+}
+.ai-card__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(242, 138, 73, 0.12);
+  color: var(--color-primary);
+  margin-bottom: 16px;
+}
+.ai-card__icon svg { width: 22px; height: 22px; }
+.ai-card h3 { font-size: 1.15rem; margin-bottom: 10px; }
+.ai-card p { color: var(--color-text-muted); margin: 0; font-size: 0.96rem; }
+
+/* ---------- Sociální ikony ve footeru ---------- */
+.social-links { display: flex; gap: 12px; align-items: center; }
+.social-links a {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  transition: all 0.18s ease;
+}
+.social-links a:hover {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+  background: rgba(242, 138, 73, 0.1);
+  text-decoration: none;
+}
+.social-links svg { width: 18px; height: 18px; }
+
+/* ---------- Integrace — dvě skupiny (import / export) ---------- */
+.integrations__intro {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 40px;
+  color: var(--color-text-muted);
+}
+.integrations {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+.integrations__group {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 32px 32px 28px;
+  box-shadow: var(--shadow-md);
+}
+.integrations__label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #16212e;
+  margin: 0 0 18px;
+}
+.integrations__label .ico {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(242, 138, 73, 0.14);
+  color: var(--color-primary-dark);
+}
+.integrations__label .ico svg { width: 19px; height: 19px; }
+.integrations__logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.int-logo {
+  height: 58px;
+  min-width: 128px;
+  flex: 1 1 128px;
+  max-width: 180px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border: 1px solid #e6e8ec;
+  border-radius: 12px;
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.int-logo:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-primary);
+  box-shadow: 0 6px 18px rgba(16, 24, 40, 0.10);
+}
+.int-logo img {
+  max-height: 30px;
+  max-width: 110px;
+  width: auto;
+}
+@media (max-width: 860px) {
+  .integrations { grid-template-columns: 1fr; }
+}
+@media (max-width: 680px) {
+  .integrations__group { padding: 28px 20px 20px; }
+  .int-logo { min-width: 104px; flex-basis: 104px; height: 50px; padding: 0 14px; }
+  .int-logo img { max-height: 26px; max-width: 90px; }
+}
+
+/* ---------- Responzivita redesignu ---------- */
+@media (max-width: 960px) {
+  .hero-home__inner { max-width: none; }
+  .banner-grid { grid-template-columns: 1fr; }
+  .cat-grid { grid-template-columns: 1fr 1fr; }
+  .ai-cards { grid-template-columns: 1fr; }
+  .ai-panel { padding: 36px 26px; }
+}
+@media (max-width: 680px) {
+  .cat-grid { grid-template-columns: 1fr; }
+  .banner-card__features { grid-template-columns: 1fr 1fr; gap: 14px; }
+  .hero-home { padding: 36px 0 24px; }
 }

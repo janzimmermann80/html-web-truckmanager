@@ -6,20 +6,21 @@
   <title>Features — TruckManager</title>
   <meta name="description" content="Complete overview of TruckManager features: dispatcher board, orders, automatic invoicing, document scanning, driver app, economic results and more.">
   <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon/TM_logo32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicon/TM_logo180x180.png">
 </head>
 <body>
 
   <header class="site-header">
     <div class="container site-header__inner">
       <a class="site-logo" href="index.html">
-        <span class="logo-tm">Truck</span>Manager
+        <img src="../assets/img/tm_logo_white.svg" alt="TruckManager" class="logo-img">
       </a>
 
       <nav class="main-nav" id="mainNav">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="funkce.html" class="active">Features</a></li>
-          <li><a href="cenik.html">Pricing</a></li>
           <li><a href="kontakt.html">Contact</a></li>
         </ul>
       </nav>
@@ -33,8 +34,7 @@
             <li><a href="../en/funkce.html">English</a></li>
           </ul>
         </div>
-        <button class="theme-toggle" type="button" aria-label="Dark mode">🌙</button>
-        <a class="btn btn--primary btn--sm" href="vyzkouset-zdarma.html">Try for free</a>
+        <a class="btn btn--primary btn--sm btn--pill header-cta" href="vyzkouset-zdarma.html">Try for free</a>
         <button class="nav-toggle" type="button" aria-label="Menu">☰</button>
       </div>
     </div>
@@ -46,84 +46,336 @@
       <div class="container">
         <div class="section__head">
           <h1>TruckManager features</h1>
-          <p>A complete tool for carriers and forwarders — from order to invoicing.</p>
+          <p>A complete tool for carriers and forwarders — from order to invoice.</p>
         </div>
 
-        <div class="grid grid--3">
-          <div class="card">
-            <div class="card__icon">🗺️</div>
-            <h3>Dynamic dispatcher board</h3>
-            <p>Organize your drivers' work with a perfect overview of task completion, completed loadings and unloadings and kilometres driven.</p>
+        <div class="features-layout">
+          <!-- Mobile feature selector -->
+          <div class="features-select">
+            <select id="featuresSelect" aria-label="Select a feature">
+              <option value="dispecink">Dispatcher board</option>
+              <option value="objednavky">Order intake</option>
+              <option value="objednavka-digital">Digital order</option>
+              <option value="diar">Loading diary</option>
+              <option value="fakturace">Automatic invoicing</option>
+              <option value="banka">Bank &amp; payment orders</option>
+              <option value="upominky">Reminders</option>
+              <option value="ridici">Driver app</option>
+              <option value="vozidla">Economic results</option>
+              <option value="vykazy">Reports &amp; statistics</option>
+              <option value="servis">Service &amp; maintenance</option>
+              <option value="sberna">Groupage (LTL)</option>
+              <option value="palety">Pallet management</option>
+              <option value="karty">Driver card backup</option>
+              <option value="diety">Travel allowances</option>
+              <option value="ai">AI assistance</option>
+            </select>
           </div>
-          <div class="card">
-            <div class="card__icon">📦</div>
-            <h3>Overview of received orders</h3>
-            <p>All jobs colour-coded by execution status. All information on one line, including transport documents.</p>
-          </div>
-          <div class="card">
-            <div class="card__icon">📅</div>
-            <h3>Loading and unloading diary</h3>
-            <p>Today's planned loadings and unloadings with arrival times and vehicle distances.</p>
-          </div>
-          <div class="card">
-            <div class="card__icon">⚡</div>
-            <h3>Order intake</h3>
-            <p>Very fast order intake including preparation of instructions for drivers.</p>
-          </div>
-          <div class="card">
-            <div class="card__icon">🧾</div>
-            <h3>Automatic invoicing from GPS</h3>
-            <p>Based on real transport values (weight, km), the system issues invoices automatically, even in bulk, and sends them by e-mail with transport documents.</p>
-          </div>
-          <div class="card">
-            <div class="card__icon">📷</div>
-            <h3>Document scanning in the vehicle</h3>
-            <p>Drivers scan transport documents directly in the vehicle and send them to the server for the given transport.</p>
-          </div>
-          <div class="card">
-            <div class="card__icon">📊</div>
-            <h3>Vehicle economic results</h3>
-            <p>Detailed evaluation of revenue and all costs — fuel consumption and profit charts.</p>
-          </div>
-          <div class="card">
-            <div class="card__icon">📈</div>
-            <h3>Reports and statistics</h3>
-            <p>The system creates driver and accounting reports by itself and automatically sends them by e-mail on the set day.</p>
-          </div>
-          <div class="card">
-            <div class="card__icon">🔧</div>
-            <h3>Vehicle service and maintenance</h3>
-            <p>Service planning and notifications. Easy and clear fleet management.</p>
-          </div>
-          <div class="card">
-            <div class="card__icon">📦</div>
-            <h3>Groupage transport</h3>
-            <p>Each transport is split into collection and distribution. Delivery optimization, warehouse consignment records, and external carriers too.</p>
-          </div>
-          <div class="card">
-            <div class="card__icon">📱</div>
-            <h3>Driver app</h3>
-            <p>Precise schedule of loadings and unloadings in the phone. Everything is controlled by just 4 buttons.</p>
-          </div>
-          <div class="card">
-            <div class="card__icon">🔄</div>
-            <h3>Pallet management</h3>
-            <p>Records of returnable packaging during loading and unloading, scanning of pallet notes. Every pallet will be traced.</p>
-          </div>
-          <div class="card">
-            <div class="card__icon">💳</div>
-            <h3>Driver card backup</h3>
-            <p>Each driver performs regular card backup by themselves using a reader and the app.</p>
-          </div>
-          <div class="card">
-            <div class="card__icon">💰</div>
-            <h3>Travel allowance calculation</h3>
-            <p>Automatic calculation of per diems and driver travel allowances based on real trips.</p>
-          </div>
-          <div class="card">
-            <div class="card__icon">🤖</div>
-            <h3>AI assistance</h3>
-            <p>Artificial intelligence helps with planning, evaluation and routine tasks.</p>
+
+          <!-- Left menu — dark like in the app -->
+          <nav class="features-menu" id="featuresMenu">
+            <div class="features-menu__title">Core features</div>
+            <a href="#dispecink" class="features-menu__item active free" data-feature="dispecink">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+              <span>Dispatcher board</span>
+            </a>
+            <a href="#objednavky" class="features-menu__item free" data-feature="objednavky">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+              <span>Order intake</span>
+            </a>
+            <a href="#objednavka-digital" class="features-menu__item free" data-feature="objednavka-digital">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m9 15 2 2 4-4"/></svg>
+              <span>Digital order</span>
+            </a>
+            <a href="#diar" class="features-menu__item free" data-feature="diar">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>
+              <span>Loading diary</span>
+            </a>
+            <a href="#fakturace" class="features-menu__item full" data-feature="fakturace">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
+              <span>Automatic invoicing</span>
+            </a>
+            <a href="#banka" class="features-menu__item full" data-feature="banka">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 10 9-7 9 7"/><path d="M5 10v10"/><path d="M19 10v10"/><path d="M9 10v10"/><path d="M15 10v10"/><path d="M3 20h18"/></svg>
+              <span>Bank &amp; payment orders</span>
+            </a>
+            <a href="#upominky" class="features-menu__item full" data-feature="upominky">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/></svg>
+              <span>Reminders</span>
+            </a>
+            <a href="#ridici" class="features-menu__item free" data-feature="ridici">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></svg>
+              <span>Driver app</span>
+            </a>
+            <a href="#vozidla" class="features-menu__item full" data-feature="vozidla">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18h-5"/><path d="M14 9h4l4 4v4a1 1 0 0 1-1 1h-2"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>
+              <span>Economic results</span>
+            </a>
+            <a href="#vykazy" class="features-menu__item full" data-feature="vykazy">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+              <span>Reports &amp; statistics</span>
+            </a>
+            <a href="#servis" class="features-menu__item free" data-feature="servis">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+              <span>Service &amp; maintenance</span>
+            </a>
+            <a href="#sberna" class="features-menu__item full" data-feature="sberna">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+              <span>Groupage (LTL)</span>
+            </a>
+            <a href="#palety" class="features-menu__item free" data-feature="palety">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16v-8z"/><path d="M3.3 7 12 12l8.7-5"/><path d="M12 22V12"/></svg>
+              <span>Pallet management</span>
+            </a>
+            <a href="#karty" class="features-menu__item free" data-feature="karty">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><path d="M2 10h20"/></svg>
+              <span>Driver card backup</span>
+            </a>
+            <a href="#diety" class="features-menu__item free" data-feature="diety">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              <span>Travel allowances</span>
+            </a>
+            <a href="#ai" class="features-menu__item full" data-feature="ai">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>
+              <span>AI assistance</span>
+            </a>
+            <div class="features-menu__more">+ 158 more features available</div>
+          </nav>
+
+          <!-- Right content -->
+          <div class="features-content">
+            <!-- Dispatcher board -->
+            <section id="dispecink" class="feature-section active">
+              <div class="feature-section__header">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                <h2>Dynamic dispatcher board</h2>
+              </div>
+              <div class="feature-section__content">
+                <p>Organise your drivers' work with a perfect overview of task completion, loadings and unloadings, and kilometres driven. All on one screen, in real time.</p>
+                <ul>
+                  <li>Overview of all jobs and their statuses</li>
+                  <li>Route planning and vehicle assignment</li>
+                  <li>Communicate with drivers straight from the board</li>
+                  <li>Automatic alerts on changes</li>
+                </ul>
+                <div class="feature-section__video">
+                  <video controls preload="metadata" poster="">
+                    <source src="../assets/video/plachta-dispecera.mp4" type="video/mp4">
+                    Your browser does not support video playback.
+                  </video>
+                </div>
+              </div>
+            </section>
+
+            <!-- Order intake -->
+            <section id="objednavky" class="feature-section">
+              <div class="feature-section__header">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+                <h2>Order intake</h2>
+              </div>
+              <div class="feature-section__content">
+                <p>Very fast order intake including preparation of instructions for drivers. AI reads e-mails, PDFs and freight exchanges and creates jobs automatically.</p>
+                <ul>
+                  <li>Automatic data extraction from e-mails and PDFs</li>
+                  <li>Integration with freight exchanges (Timocom, Trans.eu)</li>
+                  <li>Prepare driver instructions in one click</li>
+                </ul>
+              </div>
+            </section>
+
+            <!-- Digital order -->
+            <section id="objednavka-digital" class="feature-section">
+              <div class="feature-section__header">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m9 15 2 2 4-4"/></svg>
+                <h2>Digital order</h2>
+              </div>
+              <div class="feature-section__content">
+                <p>Paperless orders — straight into the system. The customer fills in the order via a link and the job is created automatically, with no retyping.</p>
+                <ul>
+                  <li>Order form for customers directly on the website</li>
+                  <li>Automatic job creation without retyping data</li>
+                  <li>Order confirmation and shipping instructions by e-mail</li>
+                  <li>Archive of all orders in one place</li>
+                </ul>
+              </div>
+            </section>
+
+            <!-- Diary -->
+            <section id="diar" class="feature-section">
+              <div class="feature-section__header">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>
+                <h2>Loading &amp; unloading diary</h2>
+              </div>
+              <div class="feature-section__content">
+                <p>Today's planned loadings and unloadings with vehicle ETAs and distances. A clear calendar for the whole team.</p>
+              </div>
+            </section>
+
+            <!-- Invoicing -->
+            <section id="fakturace" class="feature-section">
+              <div class="feature-section__header">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
+                <h2>Automatic invoicing from GPS</h2>
+              </div>
+              <div class="feature-section__content">
+                <p>Based on real transport values (weight, km) the system issues invoices automatically, even in bulk, and sends them by e-mail with shipping documents.</p>
+                <ul>
+                  <li>Invoicing from GPS data — no retyping</li>
+                  <li>Bulk invoice issuing</li>
+                  <li>Automatic e-mail with CMR and delivery notes</li>
+                  <li>Export to accounting systems (Pohoda, Money, iDoklad...)</li>
+                </ul>
+              </div>
+            </section>
+
+            <!-- Bank -->
+            <section id="banka" class="feature-section">
+              <div class="feature-section__header">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 10 9-7 9 7"/><path d="M5 10v10"/><path d="M19 10v10"/><path d="M9 10v10"/><path d="M15 10v10"/><path d="M3 20h18"/></svg>
+                <h2>Bank &amp; payment orders</h2>
+              </div>
+              <div class="feature-section__content">
+                <p>Import bank statements and automatically match payments with invoices. Create bulk payment orders in one click.</p>
+                <ul>
+                  <li>Statement import and automatic matching with invoices</li>
+                  <li>Bulk payment orders for online banking</li>
+                  <li>Overview of paid and unpaid invoices in real time</li>
+                  <li>Support for foreign currencies and exchange differences</li>
+                </ul>
+              </div>
+            </section>
+
+            <!-- Reminders -->
+            <section id="upominky" class="feature-section">
+              <div class="feature-section__header">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/></svg>
+                <h2>Automatic reminders</h2>
+              </div>
+              <div class="feature-section__content">
+                <p>The system tracks invoice due dates and notifies customers of unpaid ones automatically — including the attached invoice and shipping documents.</p>
+                <ul>
+                  <li>Automatic reminder e-mails</li>
+                  <li>Multiple reminder levels by days overdue</li>
+                  <li>Overview of debtors and communication history</li>
+                  <li>Documents for penalties and collection</li>
+                </ul>
+              </div>
+            </section>
+
+            <!-- Drivers -->
+            <section id="ridici" class="feature-section">
+              <div class="feature-section__header">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></svg>
+                <h2>Driver app</h2>
+              </div>
+              <div class="feature-section__content">
+                <p>A precise schedule of loadings and unloadings on the phone. Everything is controlled with just 4 buttons. Document scanning right in the vehicle.</p>
+                <ul>
+                  <li>Trip schedule with navigation</li>
+                  <li>Scanning of CMR and delivery notes</li>
+                  <li>Photo documentation of shipment condition</li>
+                  <li>Online communication with the dispatcher</li>
+                </ul>
+              </div>
+            </section>
+
+            <!-- Vehicles -->
+            <section id="vozidla" class="feature-section">
+              <div class="feature-section__header">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18h-5"/><path d="M14 9h4l4 4v4a1 1 0 0 1-1 1h-2"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>
+                <h2>Vehicle economic results</h2>
+              </div>
+              <div class="feature-section__content">
+                <p>Detailed evaluation of revenue and all costs — fuel consumption and profit charts. Insight into the profitability of every vehicle.</p>
+              </div>
+            </section>
+
+            <!-- Reports -->
+            <section id="vykazy" class="feature-section">
+              <div class="feature-section__header">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+                <h2>Reports &amp; statistics</h2>
+              </div>
+              <div class="feature-section__content">
+                <p>Reports for drivers and accounting are generated automatically and sent by e-mail on a set day. Allowances, working hours, trip sheets — all automatic.</p>
+              </div>
+            </section>
+
+            <!-- Service -->
+            <section id="servis" class="feature-section">
+              <div class="feature-section__header">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                <h2>Vehicle service &amp; maintenance</h2>
+              </div>
+              <div class="feature-section__content">
+                <p>Service planning and alerts. Fleet management made simple and clear. Track MOT, emissions, tyres and repairs.</p>
+              </div>
+            </section>
+
+            <!-- Groupage -->
+            <section id="sberna" class="feature-section">
+              <div class="feature-section__header">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+                <h2>Groupage (LTL)</h2>
+              </div>
+              <div class="feature-section__content">
+                <p>Each shipment split into collection and delivery. Delivery route optimisation, warehouse shipment records, and external carriers too.</p>
+                <ul>
+                  <li>Route optimisation for groupage</li>
+                  <li>Warehouse shipment records</li>
+                  <li>Cooperation with external carriers</li>
+                </ul>
+              </div>
+            </section>
+
+            <!-- Pallets -->
+            <section id="palety" class="feature-section">
+              <div class="feature-section__header">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16v-8z"/><path d="M3.3 7 12 12l8.7-5"/><path d="M12 22V12"/></svg>
+                <h2>Pallet management</h2>
+              </div>
+              <div class="feature-section__content">
+                <p>Records of returnable packaging at loading and unloading, scanning of pallet notes. Every pallet will be traced.</p>
+              </div>
+            </section>
+
+            <!-- Cards -->
+            <section id="karty" class="feature-section">
+              <div class="feature-section__header">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><path d="M2 10h20"/></svg>
+                <h2>Driver card backup</h2>
+              </div>
+              <div class="feature-section__content">
+                <p>Each driver performs the regular driver card backup themselves using a reader and the app. Automatic validity checks.</p>
+              </div>
+            </section>
+
+            <!-- Allowances -->
+            <section id="diety" class="feature-section">
+              <div class="feature-section__header">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                <h2>Travel allowance calculation</h2>
+              </div>
+              <div class="feature-section__content">
+                <p>Automatic calculation of drivers' per diems and travel allowances based on real trips. Reports for payroll in one click.</p>
+              </div>
+            </section>
+
+            <!-- AI -->
+            <section id="ai" class="feature-section">
+              <div class="feature-section__header">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>
+                <h2>AI assistance</h2>
+              </div>
+              <div class="feature-section__content">
+                <p>Artificial intelligence helps with planning, evaluation and routine tasks. It automatically searches for suitable offers in freight exchanges.</p>
+                <ul>
+                  <li>AI reads and writes orders</li>
+                  <li>AI searches freight exchanges</li>
+                  <li>Automatic route optimisation suggestions</li>
+                </ul>
+              </div>
+            </section>
           </div>
         </div>
       </div>
@@ -133,8 +385,8 @@
     <section class="section section--alt">
       <div class="container">
         <div class="cta-band">
-          <h2>Want to see the features in practice?</h2>
-          <p>Try TruckManager free for 30 days, or ask for a live demonstration.</p>
+          <h2>Want to see the features in action?</h2>
+          <p>Try TruckManager free for 30 days, or request a live demo.</p>
           <a class="btn btn--primary btn--lg" href="vyzkouset-zdarma.html">Try for free</a>
         </div>
       </div>
@@ -146,43 +398,57 @@
     <div class="container">
       <div class="site-footer__grid">
         <div>
-          <h4>1. Česká obchodní, s.r.o.</h4>
+          <a class="site-logo" href="index.html"><img src="../assets/img/tm_logo_white.svg" alt="TruckManager" class="logo-img"></a>
           <p class="about">
-            Since 1995 we have been developing software and information systems for transport and forwarding.
-            Since 2005 also GPS tracking systems for road freight transport.
+            A modern system for transport companies.<br>
+            Everything you need, in one place.
           </p>
         </div>
         <div>
           <h4>Product</h4>
           <ul>
             <li><a href="funkce.html">Features</a></li>
-            <li><a href="cenik.html">Pricing</a></li>
             <li><a href="vyzkouset-zdarma.html">Try for free</a></li>
           </ul>
         </div>
         <div>
-          <h4>About us</h4>
+          <h4>Company</h4>
           <ul>
             <li><a href="kontakt.html">Contact</a></li>
-            <li><a href="#">Company</a></li>
-            <li><a href="#">Careers</a></li>
+            <li><a href="tel:+420737288090">+420 737 288 090</a></li>
           </ul>
         </div>
         <div>
-          <h4>Contact</h4>
+          <h4>Support</h4>
           <ul>
-            <li><a href="tel:+420737288090">+420 737 288 090</a></li>
-            <li><a href="kontakt.html">Contact form</a></li>
+            <li><a href="kontakt.html">Customer support</a></li>
+            <li><a href="vyzkouset-zdarma.html">Request a quote</a></li>
           </ul>
         </div>
       </div>
       <div class="site-footer__bottom">
-        <span>© 2026 1. Česká obchodní, s.r.o.</span>
-        <span>TruckManager — transport and forwarding software</span>
+        <span>© 2026 1. Česká obchodní, s.r.o. — TruckManager, transport &amp; forwarding software</span>
+        <span><a href="#">Privacy</a> · <a href="#">Terms of use</a> · <a href="#">Cookies</a></span>
       </div>
     </div>
   </footer>
 
   <script src="../assets/js/main.js"></script>
+
+  <!-- Cookie bar -->
+  <div class="cookie-banner" role="dialog" aria-label="Cookie bar">
+    <div class="container">
+      <div class="cookie-banner__inner">
+        <p class="cookie-banner__text">
+          We use cookies to analyse traffic and improve the user experience.
+          Do you agree to their use?
+        </p>
+        <div class="cookie-banner__actions">
+          <button class="cookie-banner__btn cookie-banner__btn--decline" data-cookie-decline>Decline</button>
+          <button class="cookie-banner__btn cookie-banner__btn--accept" data-cookie-accept>I agree</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

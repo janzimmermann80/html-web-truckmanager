@@ -12,14 +12,13 @@
   <header class="site-header">
     <div class="container site-header__inner">
       <a class="site-logo" href="index.html">
-        <span class="logo-tm">Truck</span>Manager
+        <img src="../assets/img/tm_logo_white.svg" alt="TruckManager" class="logo-img">
       </a>
 
       <nav class="main-nav" id="mainNav">
         <ul>
           <li><a href="index.html">Úvod</a></li>
           <li><a href="funkce.html">Funkcie</a></li>
-          <li><a href="cenik.html">Cenník</a></li>
           <li><a href="kontakt.html" class="active">Kontakt</a></li>
         </ul>
       </nav>
@@ -33,8 +32,7 @@
             <li><a href="../en/kontakt.html">English</a></li>
           </ul>
         </div>
-        <button class="theme-toggle" type="button" aria-label="Tmavý režim">🌙</button>
-        <a class="btn btn--primary btn--sm" href="vyzkouset-zdarma.html">Vyskúšať zadarmo</a>
+        <a class="btn btn--primary btn--sm btn--pill header-cta" href="vyzkouset-zdarma.html">Vyskúšať zadarmo</a>
         <button class="nav-toggle" type="button" aria-label="Menu">☰</button>
       </div>
     </div>
@@ -52,7 +50,12 @@
         <div class="grid grid--2" style="align-items: start;">
           <div class="card">
             <h3>Napíšte nám</h3>
-            <form class="form form--2col" action="#" method="post">
+            <form class="form form--2col" action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="19009bc3-2c93-46f5-9833-60c37d14d286">
+              <input type="hidden" name="subject" value="Kontaktný formulár — TruckManager">
+              <input type="hidden" name="from_name" value="Web TruckManager">
+              <input type="hidden" name="redirect" value="https://www.truckmanager.eu/sk/kontakt.html?odeslano=1">
+              <input type="checkbox" name="botcheck" style="display:none">
               <div>
                 <label for="jmeno">Meno a priezvisko *</label>
                 <input type="text" id="jmeno" name="jmeno" required>
@@ -108,39 +111,37 @@
     <div class="container">
       <div class="site-footer__grid">
         <div>
-          <h4>1. Česká obchodní, s.r.o.</h4>
+          <a class="site-logo" href="index.html"><img src="../assets/img/tm_logo_white.svg" alt="TruckManager" class="logo-img"></a>
           <p class="about">
-            Od roku 1995 vyvíjame software a informačné systémy pre dopravu a špedíciu.
-            Od roku 2005 aj GPS sledovacie systémy pre cestnú nákladnú dopravu.
+            Moderný systém pre dopravné firmy.<br>
+            Všetko, čo potrebujete, na jednom mieste.
           </p>
         </div>
         <div>
           <h4>Produkt</h4>
           <ul>
             <li><a href="funkce.html">Funkcie</a></li>
-            <li><a href="cenik.html">Cenník</a></li>
             <li><a href="vyzkouset-zdarma.html">Vyskúšať zadarmo</a></li>
           </ul>
         </div>
         <div>
-          <h4>O nás</h4>
+          <h4>Spoločnosť</h4>
           <ul>
             <li><a href="kontakt.html">Kontakt</a></li>
-            <li><a href="#">Spoločnosť</a></li>
-            <li><a href="#">Kariéra</a></li>
+            <li><a href="tel:+420737288090">+420 737 288 090</a></li>
           </ul>
         </div>
         <div>
-          <h4>Kontakt</h4>
+          <h4>Podpora</h4>
           <ul>
-            <li><a href="tel:+420737288090">+420 737 288 090</a></li>
-            <li><a href="kontakt.html">Kontaktný formulár</a></li>
+            <li><a href="kontakt.html">Zákaznícka podpora</a></li>
+            <li><a href="vyzkouset-zdarma.html">Nezáväzný dopyt</a></li>
           </ul>
         </div>
       </div>
       <div class="site-footer__bottom">
-        <span>© 2026 1. Česká obchodní, s.r.o.</span>
-        <span>TruckManager — dopravný a špedičný software</span>
+        <span>© 2026 1. Česká obchodní, s.r.o. — TruckManager, dopravný a špedičný software</span>
+        <span><a href="#">Súkromie</a> · <a href="#">Podmienky používania</a> · <a href="#">Cookies</a></span>
       </div>
     </div>
   </footer>
